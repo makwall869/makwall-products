@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makwall Products — Automating Business Growth with AI</title>
+<meta name="description" content="Makwall Products builds WhatsApp automation, AI chatbots, custom CRMs, business dashboards and workflow automation for growing businesses. MSME registered software services provider based in Mangalagiri, Andhra Pradesh.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: '#F5F6F2',
+          ink: '#13161B',
+          mute: '#585F6B',
+          faint: '#9AA0A9',
+          panel: '#FFFFFF',
+          hair: '#E1E4DF',
+          navy: '#0E1830',
+          navy2: '#1B2A52',
+          signal: '#FF5B1F',
+          signaldim: '#FFEDE3',
+          ok: '#17B26A',
+          okdim: '#E7F8EF',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace'],
+        },
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #F5F6F2; }
+  ::-webkit-scrollbar { width: 9px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #D8DBD3; border-radius: 5px; }
+
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1.5px;
+    background: #FF5B1F; transition: width .25s ease;
+  }
+  .nav-link:hover::after { width: 100%; }
+
+  /* Pipeline signature animation */
+  .pipeline-track { position: relative; }
+  .pipeline-line {
+    position: absolute; top: 50%; left: 0; right: 0; height: 2px;
+    background: repeating-linear-gradient(90deg, #3A4560 0, #3A4560 6px, transparent 6px, transparent 12px);
+    transform: translateY(-50%);
+  }
+  .pipeline-pulse {
+    position: absolute; top: 50%; width: 10px; height: 10px; border-radius: 50%;
+    background: #FF5B1F; box-shadow: 0 0 0 4px rgba(255,91,31,0.18), 0 0 16px rgba(255,91,31,0.6);
+    transform: translate(-50%, -50%); animation: travel 3.6s cubic-bezier(.65,0,.35,1) infinite;
+  }
+  @keyframes travel {
+    0%   { left: 2%; opacity: 0; }
+    5%   { opacity: 1; }
+    22%  { left: 26%; }
+    27%  { left: 26%; }
+    44%  { left: 50%; }
+    49%  { left: 50%; }
+    66%  { left: 74%; }
+    71%  { left: 74%; }
+    88%  { left: 98%; opacity: 1; }
+    100% { left: 98%; opacity: 0; }
+  }
+  .pipeline-node { transition: transform .3s ease; }
+  .node-active-1 { animation: nodeGlow 3.6s ease infinite; }
+  .node-active-2 { animation: nodeGlow 3.6s ease infinite; animation-delay: 0.9s; }
+  .node-active-3 { animation: nodeGlow 3.6s ease infinite; animation-delay: 1.8s; }
+  .node-active-4 { animation: nodeGlow 3.6s ease infinite; animation-delay: 2.7s; }
+  @keyframes nodeGlow {
+    0%, 25%, 100% { box-shadow: 0 0 0 0 rgba(255,91,31,0); border-color: #3A4560; }
+    35%, 45% { box-shadow: 0 0 0 6px rgba(255,91,31,0.15); border-color: #FF5B1F; }
+  }
+
+  .fade-up { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  .fade-up.in { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pipeline-pulse, .node-active-1, .node-active-2, .node-active-3, .node-active-4 { animation: none !important; }
+    .fade-up { transition: none; opacity: 1; transform: none; }
+  }
+
+  input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible {
+    outline: 2px solid #FF5B1F; outline-offset: 2px;
+  }
+</style>
+</head>
+<body class="bg-paper text-ink font-body antialiased">
+
+<!-- ============ NAV ============ -->
+<header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-hair">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2">
+      <div class="w-7 h-7 rounded-md bg-navy flex items-center justify-center">
+        <span class="text-signal font-display font-700 text-sm">M</span>
+      </div>
+      <span class="font-display font-700 text-lg tracking-tight">Makwall Products</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-mute">
+      <a href="#services" class="nav-link hover:text-ink">Services</a>
+      <a href="#work" class="nav-link hover:text-ink">Work</a>
+      <a href="#process" class="nav-link hover:text-ink">Process</a>
+      <a href="#industries" class="nav-link hover:text-ink">Industries</a>
+      <a href="#contact" class="nav-link hover:text-ink">Contact</a>
+    </nav>
+    <a href="#contact" class="bg-navy text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-navy2 transition-colors">
+      Start a project
+    </a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="bg-navy text-white relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 pt-16 pb-20 sm:pt-24 sm:pb-28">
+    <div class="flex items-center gap-2 text-xs font-mono text-white/50 mb-6">
+      <span class="w-1.5 h-1.5 rounded-full bg-ok"></span>
+      MSME REGISTERED · SOFTWARE SERVICES · NIC 58201
+    </div>
+    <h1 class="font-display font-700 text-4xl sm:text-6xl leading-[1.05] tracking-tight max-w-3xl">
+      Automating business growth<br class="hidden sm:block"> with <span class="text-signal">AI</span>.
+    </h1>
+    <p class="text-xs font-mono text-signal/80 mt-4 tracking-wider uppercase">
+      Website &nbsp;|&nbsp; CRMs &nbsp;|&nbsp; WhatsApp automation
+    </p>
+    <p class="text-white/60 text-lg mt-6 max-w-xl leading-relaxed">
+      We build the website that brings customers in, and the CRMs, dashboards, and WhatsApp
+      automations that keep them coming back — without your team drowning in spreadsheets.
+    </p>
+    <div class="flex flex-wrap gap-3 mt-8">
+      <a href="#contact" class="bg-signal text-white font-semibold text-sm px-5 py-3 rounded-lg hover:bg-signal/90 transition-colors">
+        Talk to us
+      </a>
+      <a href="#work" class="border border-white/20 text-white/90 font-semibold text-sm px-5 py-3 rounded-lg hover:bg-white/5 transition-colors">
+        See real projects
+      </a>
+    </div>
+
+    <!-- Signature: full customer lifecycle pipeline -->
+    <div class="mt-16 sm:mt-20 bg-white/[0.04] border border-white/10 rounded-2xl p-6 sm:p-8">
+      <p class="text-xs font-mono text-white/40 mb-6 uppercase tracking-wide">From first click to renewed — one complete customer lifecycle</p>
+      <div class="pipeline-track h-16 sm:h-20 relative flex items-center">
+        <div class="pipeline-line"></div>
+        <div class="pipeline-pulse"></div>
+        <div class="absolute left-[2%] -translate-x-1/2 flex flex-col items-center gap-2">
+          <div class="pipeline-node node-active-1 w-11 h-11 rounded-full bg-navy border-2 border-white/20 flex items-center justify-center">
+            <i data-lucide="globe" class="w-4 h-4 text-white/70"></i>
+          </div>
+          <span class="text-[11px] font-mono text-white/50 whitespace-nowrap">Website visit</span>
+        </div>
+        <div class="absolute left-[26%] -translate-x-1/2 flex flex-col items-center gap-2">
+          <div class="pipeline-node node-active-2 w-11 h-11 rounded-full bg-navy border-2 border-white/20 flex items-center justify-center">
+            <i data-lucide="user-plus" class="w-4 h-4 text-white/70"></i>
+          </div>
+          <span class="text-[11px] font-mono text-white/50 whitespace-nowrap">Lead captured</span>
+        </div>
+        <div class="absolute left-[50%] -translate-x-1/2 flex flex-col items-center gap-2">
+          <div class="pipeline-node node-active-3 w-11 h-11 rounded-full bg-navy border-2 border-white/20 flex items-center justify-center">
+            <i data-lucide="database" class="w-4 h-4 text-white/70"></i>
+          </div>
+          <span class="text-[11px] font-mono text-white/50 whitespace-nowrap">CRM handles member</span>
+        </div>
+        <div class="absolute left-[74%] -translate-x-1/2 flex flex-col items-center gap-2">
+          <div class="pipeline-node node-active-4 w-11 h-11 rounded-full bg-navy border-2 border-white/20 flex items-center justify-center">
+            <i data-lucide="message-circle" class="w-4 h-4 text-white/70"></i>
+          </div>
+          <span class="text-[11px] font-mono text-white/50 whitespace-nowrap">WhatsApp sent</span>
+        </div>
+        <div class="absolute left-[98%] -translate-x-full flex flex-col items-center gap-2">
+          <div class="w-11 h-11 rounded-full bg-ok/20 border-2 border-ok/50 flex items-center justify-center">
+            <i data-lucide="check" class="w-4 h-4 text-ok"></i>
+          </div>
+          <span class="text-[11px] font-mono text-white/50 whitespace-nowrap">Renewed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
+  <div class="grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-4">
+      <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">About Makwall Products</p>
+      <h2 class="font-display font-700 text-2xl sm:text-3xl leading-tight">
+        Software for the work that shouldn't need a human every time.
+      </h2>
+    </div>
+    <div class="md:col-span-8">
+      <p class="text-mute leading-relaxed text-base sm:text-lg">
+        Makwall Products is a software company that helps businesses automate repetitive work, improve customer
+        communication, and manage operations digitally. We specialize in WhatsApp automation, AI chatbots,
+        custom CRM development, business websites, workflow automation, business dashboards, AI integrations,
+        and internal management systems.
+      </p>
+      <p class="text-mute leading-relaxed text-base sm:text-lg mt-4">
+        We work directly with the businesses we build for — gyms, clinics, tuition centers, repair shops,
+        and retailers — which means every system we ship is shaped by an actual front desk, not a generic
+        template. If a workflow doesn't hold up on a busy Monday morning, we don't ship it.
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-5 mt-8 pt-8 border-t border-hair">
+        <div>
+          <p class="font-display font-700 text-2xl">MSME</p>
+          <p class="text-xs text-faint font-mono mt-1">Registered</p>
+        </div>
+        <div>
+          <p class="font-display font-700 text-2xl">58201</p>
+          <p class="text-xs text-faint font-mono mt-1">NIC Code</p>
+        </div>
+        <div>
+          <p class="font-display font-700 text-2xl">4+</p>
+          <p class="text-xs text-faint font-mono mt-1">Active builds</p>
+        </div>
+        <div>
+          <p class="font-display font-700 text-2xl">1:1</p>
+          <p class="text-xs text-faint font-mono mt-1">Client to builder</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO WE BUILD FOR ============ -->
+<section class="bg-white border-y border-hair">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
+    <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">Who we build for</p>
+    <h2 class="font-display font-700 text-2xl sm:text-3xl mb-10 max-w-xl">
+      Local businesses ready to stop running on memory and messages.
+    </h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="border border-hair rounded-xl p-5">
+        <i data-lucide="shopping-bag" class="w-5 h-5 text-signal mb-3"></i>
+        <p class="font-medium">Retail & e-commerce</p>
+        <p class="text-sm text-mute mt-1">Order confirmations, payment automation, catalog management.</p>
+      </div>
+      <div class="border border-hair rounded-xl p-5">
+        <i data-lucide="dumbbell" class="w-5 h-5 text-signal mb-3"></i>
+        <p class="font-medium">Gyms & fitness studios</p>
+        <p class="text-sm text-mute mt-1">Membership tracking, renewal reminders, front-desk check-ins.</p>
+      </div>
+      <div class="border border-hair rounded-xl p-5">
+        <i data-lucide="stethoscope" class="w-5 h-5 text-signal mb-3"></i>
+        <p class="font-medium">Clinics & healthcare</p>
+        <p class="text-sm text-mute mt-1">Appointment booking, queue management, patient notifications.</p>
+      </div>
+      <div class="border border-hair rounded-xl p-5">
+        <i data-lucide="building" class="w-5 h-5 text-signal mb-3"></i>
+        <p class="font-medium">Schools & offices</p>
+        <p class="text-sm text-mute mt-1">Lead capture, admission tracking, automated follow-ups.</p>
+      </div>
+      <div class="border border-hair rounded-xl p-5 bg-signaldim">
+        <i data-lucide="arrow-right" class="w-5 h-5 text-signal mb-3"></i>
+        <p class="font-medium">Not listed here?</p>
+        <p class="text-sm text-mute mt-1">If it involves repetitive manual work, we've probably automated something like it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
+  <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">Services</p>
+  <h2 class="font-display font-700 text-2xl sm:text-3xl mb-10 max-w-xl">What we build, module by module.</h2>
+
+  <div class="grid sm:grid-cols-2 gap-5">
+    <div class="border border-hair rounded-xl p-6 bg-white">
+      <div class="flex items-center justify-between mb-4">
+        <i data-lucide="message-circle" class="w-6 h-6 text-signal"></i>
+        <span class="text-xs font-mono text-faint">WA-01</span>
+      </div>
+      <h3 class="font-display font-600 text-lg mb-2">WhatsApp Automation</h3>
+      <p class="text-mute text-sm leading-relaxed">Payment reminders, order updates, appointment confirmations —
+        sent automatically via the official WhatsApp Business API, triggered by real events in your data.</p>
+    </div>
+    <div class="border border-hair rounded-xl p-6 bg-white">
+      <div class="flex items-center justify-between mb-4">
+        <i data-lucide="database" class="w-6 h-6 text-signal"></i>
+        <span class="text-xs font-mono text-faint">CRM-01</span>
+      </div>
+      <h3 class="font-display font-600 text-lg mb-2">Custom CRM Development</h3>
+      <p class="text-mute text-sm leading-relaxed">Member records, payment history, and status — built around how
+        your front desk actually works, not a rigid off-the-shelf template.</p>
+    </div>
+    <div class="border border-hair rounded-xl p-6 bg-white">
+      <div class="flex items-center justify-between mb-4">
+        <i data-lucide="globe" class="w-6 h-6 text-signal"></i>
+        <span class="text-xs font-mono text-faint">WEB-01</span>
+      </div>
+      <h3 class="font-display font-600 text-lg mb-2">Business Websites</h3>
+      <p class="text-mute text-sm leading-relaxed">Fast, distinctive websites that convert visitors into leads —
+        no bloated builders, no templates that look like everyone else's.</p>
+    </div>
+    <div class="border border-hair rounded-xl p-6 bg-white">
+      <div class="flex items-center justify-between mb-4">
+        <i data-lucide="workflow" class="w-6 h-6 text-signal"></i>
+        <span class="text-xs font-mono text-faint">FLOW-01</span>
+      </div>
+      <h3 class="font-display font-600 text-lg mb-2">Workflow Automation</h3>
+      <p class="text-mute text-sm leading-relaxed">Connect the tools you already use — sheets, forms, payment
+        gateways — so information moves without anyone re-typing it.</p>
+    </div>
+    <div class="border border-hair rounded-xl p-6 bg-white">
+      <div class="flex items-center justify-between mb-4">
+        <i data-lucide="layout-dashboard" class="w-6 h-6 text-signal"></i>
+        <span class="text-xs font-mono text-faint">DASH-01</span>
+      </div>
+      <h3 class="font-display font-600 text-lg mb-2">Business Dashboards</h3>
+      <p class="text-mute text-sm leading-relaxed">See revenue, expiring memberships, and pending payments at a
+        glance — one screen, not five spreadsheets.</p>
+    </div>
+    <div class="border border-hair rounded-xl p-6 bg-white">
+      <div class="flex items-center justify-between mb-4">
+        <i data-lucide="sparkles" class="w-6 h-6 text-signal"></i>
+        <span class="text-xs font-mono text-faint">AI-02</span>
+      </div>
+      <h3 class="font-display font-600 text-lg mb-2">AI Integrations</h3>
+      <p class="text-mute text-sm leading-relaxed">Add AI where it earns its place — summarizing reviews, drafting
+        replies, flagging what needs attention first.</p>
+    </div>
+    <div class="border border-hair rounded-xl p-6 bg-white">
+      <div class="flex items-center justify-between mb-4">
+        <i data-lucide="shield-check" class="w-6 h-6 text-signal"></i>
+        <span class="text-xs font-mono text-faint">SYS-01</span>
+      </div>
+      <h3 class="font-display font-600 text-lg mb-2">Internal Management Systems</h3>
+      <p class="text-mute text-sm leading-relaxed">Staff logins, role-based access, and internal tools for teams
+        that have outgrown shared spreadsheets.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REAL WORK ============ -->
+<section id="work" class="bg-white border-y border-hair">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
+    <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">Real work</p>
+    <h2 class="font-display font-700 text-2xl sm:text-3xl mb-2 max-w-xl">Projects we've actually built.</h2>
+    <p class="text-mute text-sm mb-10 max-w-xl">No fictional case studies — every project below is real, completed
+      or currently in progress for an actual client.</p>
+
+    <div class="space-y-5">
+      <div class="border border-hair rounded-xl p-6 sm:p-7 flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-8">
+        <div class="sm:w-40 shrink-0">
+          <span class="inline-block text-xs font-mono px-2 py-1 rounded-full bg-okdim text-ok">In progress</span>
+        </div>
+        <div class="flex-1">
+          <h3 class="font-display font-600 text-lg mb-1.5">WhatsApp payment reminder automation</h3>
+          <p class="text-mute text-sm leading-relaxed mb-3">
+            Built for a gym client: an automated system that checks membership expiry dates daily and sends a
+            WhatsApp reminder to members before their plan lapses — removing the need for front-desk staff to
+            track renewals manually.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">Supabase</span>
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">Edge Functions</span>
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">WhatsApp Cloud API</span>
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">pg_cron</span>
+          </div>
+        </div>
+        <a href="#contact" class="text-sm font-semibold text-signal hover:text-signal/80 whitespace-nowrap shrink-0">Learn more →</a>
+      </div>
+
+      <div class="border border-hair rounded-xl p-6 sm:p-7 flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-8">
+        <div class="sm:w-40 shrink-0">
+          <span class="inline-block text-xs font-mono px-2 py-1 rounded-full bg-okdim text-ok">Completed</span>
+        </div>
+        <div class="flex-1">
+          <h3 class="font-display font-600 text-lg mb-1.5">Lead management system — tuition center</h3>
+          <p class="text-mute text-sm leading-relaxed mb-3">
+            An admission lead-tracking system with a Google Sheets backend, an n8n workflow routing new leads by
+            action type, and automated follow-up via WhatsApp and transactional email.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">Google Sheets</span>
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">n8n</span>
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">Brevo</span>
+          </div>
+        </div>
+        <a href="#contact" class="text-sm font-semibold text-signal hover:text-signal/80 whitespace-nowrap shrink-0">Learn more →</a>
+      </div>
+
+      <div class="border border-hair rounded-xl p-6 sm:p-7 flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-8">
+        <div class="sm:w-40 shrink-0">
+          <span class="inline-block text-xs font-mono px-2 py-1 rounded-full bg-okdim text-ok">Completed</span>
+        </div>
+        <div class="flex-1">
+          <h3 class="font-display font-600 text-lg mb-1.5">E-commerce platform — Elera</h3>
+          <p class="text-mute text-sm leading-relaxed mb-3">
+            A clothing e-commerce platform with Razorpay payment integration and automated WhatsApp notifications
+            triggered on order status changes, backed by a Supabase database.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">React</span>
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">Supabase</span>
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">Razorpay</span>
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">WhatsApp automation</span>
+          </div>
+        </div>
+        <a href="#contact" class="text-sm font-semibold text-signal hover:text-signal/80 whitespace-nowrap shrink-0">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process" class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
+  <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">Process</p>
+  <h2 class="font-display font-700 text-2xl sm:text-3xl mb-10 max-w-xl">How a project actually moves.</h2>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div>
+      <p class="font-mono text-signal text-sm mb-2">01</p>
+      <h3 class="font-display font-600 mb-2">Understand the front desk</h3>
+      <p class="text-mute text-sm leading-relaxed">We look at how work actually happens today — the calls, the
+        registers, the WhatsApp chats — before designing anything.</p>
+    </div>
+    <div>
+      <p class="font-mono text-signal text-sm mb-2">02</p>
+      <h3 class="font-display font-600 mb-2">Design the system</h3>
+      <p class="text-mute text-sm leading-relaxed">We map the data and the automation rules — what triggers a
+        message, what a dashboard needs to show, what can wait.</p>
+    </div>
+    <div>
+      <p class="font-mono text-signal text-sm mb-2">03</p>
+      <h3 class="font-display font-600 mb-2">Build and test live</h3>
+      <p class="text-mute text-sm leading-relaxed">We build against your real data early, so what you see during
+        development is what actually ships — no surprises at launch.</p>
+    </div>
+    <div>
+      <p class="font-mono text-signal text-sm mb-2">04</p>
+      <h3 class="font-display font-600 mb-2">Deploy and hand over</h3>
+      <p class="text-mute text-sm leading-relaxed">We deploy, train your team on the day-to-day, and stay on for
+        ongoing support through a monthly retainer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECHNOLOGIES ============ -->
+<section class="bg-white border-y border-hair">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
+    <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">Technologies</p>
+    <h2 class="font-display font-700 text-2xl sm:text-3xl mb-8 max-w-xl">The stack behind the automation.</h2>
+    <div class="flex flex-wrap gap-3">
+      <span class="font-mono text-sm px-3 py-1.5 rounded-lg border border-hair bg-paper">HTML / CSS / JavaScript</span>
+      <span class="font-mono text-sm px-3 py-1.5 rounded-lg border border-hair bg-paper">React</span>
+      <span class="font-mono text-sm px-3 py-1.5 rounded-lg border border-hair bg-paper">Supabase</span>
+      <span class="font-mono text-sm px-3 py-1.5 rounded-lg border border-hair bg-paper">Edge Functions</span>
+      <span class="font-mono text-sm px-3 py-1.5 rounded-lg border border-hair bg-paper">n8n</span>
+      <span class="font-mono text-sm px-3 py-1.5 rounded-lg border border-hair bg-paper">WhatsApp Cloud API</span>
+      <span class="font-mono text-sm px-3 py-1.5 rounded-lg border border-hair bg-paper">Razorpay</span>
+      <span class="font-mono text-sm px-3 py-1.5 rounded-lg border border-hair bg-paper">Google Sheets / Apps Script</span>
+      <span class="font-mono text-sm px-3 py-1.5 rounded-lg border border-hair bg-paper">Brevo</span>
+      </div>
+  </div>
+</section>
+
+<!-- ============ WHY MAKWALL ============ -->
+<section class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
+  <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">Why Makwall Products</p>
+  <h2 class="font-display font-700 text-2xl sm:text-3xl mb-10 max-w-xl">Built by the person who supports it.</h2>
+  <div class="grid sm:grid-cols-3 gap-6">
+    <div>
+      <i data-lucide="user" class="w-5 h-5 text-signal mb-3"></i>
+      <h3 class="font-display font-600 mb-2">One point of contact</h3>
+      <p class="text-mute text-sm leading-relaxed">The person who builds your system is the same person who answers
+        when something needs fixing — no support tickets into a void.</p>
+    </div>
+    <div>
+      <i data-lucide="settings-2" class="w-5 h-5 text-signal mb-3"></i>
+      <h3 class="font-display font-600 mb-2">Built around your workflow</h3>
+      <p class="text-mute text-sm leading-relaxed">Not a rebranded template. Every system is shaped by how your
+        team actually works day to day.</p>
+    </div>
+    <div>
+      <i data-lucide="indian-rupee" class="w-5 h-5 text-signal mb-3"></i>
+      <h3 class="font-display font-600 mb-2">Transparent, fair pricing</h3>
+      <p class="text-mute text-sm leading-relaxed">A one-time setup fee plus a monthly retainer — no hidden markups,
+        no long lock-in contracts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENT TESTIMONIALS (placeholder, honest) ============ -->
+<section class="bg-white border-y border-hair">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-14 sm:py-16 text-center">
+    <p class="text-xs font-mono text-faint uppercase tracking-wide mb-2">What clients are saying</p>
+    <p class="text-mute">Client testimonials coming soon.</p>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="bg-navy text-white">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">Get in touch</p>
+        <h2 class="font-display font-700 text-2xl sm:text-3xl mb-5 max-w-md">
+          Tell us what's still done by hand — we'll tell you what's worth automating first.
+        </h2>
+        <p class="text-white/60 text-sm leading-relaxed max-w-md">
+          No obligation, no generic sales pitch. We'll look at your actual workflow and give you a straight
+          answer on what's realistic.
+        </p>
+      </div>
+      <div class="space-y-5">
+        <div class="flex items-start gap-3">
+          <i data-lucide="building-2" class="w-5 h-5 text-signal mt-0.5 shrink-0"></i>
+          <div>
+            <p class="text-sm text-white/50 font-mono uppercase tracking-wide mb-1">Business</p>
+            <p class="text-white">Makwall Products</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <i data-lucide="map-pin" class="w-5 h-5 text-signal mt-0.5 shrink-0"></i>
+          <div>
+            <p class="text-sm text-white/50 font-mono uppercase tracking-wide mb-1">Address</p>
+            <p class="text-white font-mono text-sm leading-relaxed">
+              Door No. 5-178/D/2, Kopperla PG &amp; Hostel,<br>
+              Atmakur, APSP Camp Road,<br>
+              Mangalagiri, Guntur, Andhra Pradesh 522503, India
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <i data-lucide="mail" class="w-5 h-5 text-signal mt-0.5 shrink-0"></i>
+          <div>
+            <p class="text-sm text-white/50 font-mono uppercase tracking-wide mb-1">Email</p>
+            <a href="mailto:makwallproducts@gmail.com" class="text-white hover:text-signal transition-colors font-mono text-sm">makwallproducts@gmail.com</a>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <i data-lucide="phone" class="w-5 h-5 text-signal mt-0.5 shrink-0"></i>
+          <div>
+            <p class="text-sm text-white/50 font-mono uppercase tracking-wide mb-1">Phone</p>
+            <a href="tel:+918179823846" class="text-white hover:text-signal transition-colors font-mono text-sm">+91 81798 23846</a>
+          </div>
+        </div>
+        <a href="https://wa.me/919014261543" target="_blank" rel="noopener"
+          class="inline-flex flex-col items-start gap-0 bg-signal text-white font-semibold text-sm px-5 py-3 rounded-lg hover:bg-signal/90 transition-colors mt-2">
+          <span class="flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4"></i> Message us on WhatsApp</span>
+          <span class="text-[10px] font-mono text-white/80 font-normal pl-6">+91 90142 61543</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-navy text-white/50 border-t border-white/10">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-8">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center">
+          <span class="text-signal font-display font-700 text-xs">M</span>
+        </div>
+        <span class="font-display font-600 text-sm text-white/80">Makwall Products</span>
+      </div>
+      <p class="text-xs font-mono">© <span id="year"></span> Makwall Products. All rights reserved.</p>
+    </div>
+    <p class="text-xs font-mono mt-5 leading-relaxed max-w-2xl">
+      Makwall Products is a registered micro-enterprise, based at Door No. 5-178/D/2, Kopperla PG &amp; Hostel,
+      Atmakur, APSP Camp Road, Mangalagiri, Guntur, Andhra Pradesh 522503, India.
+    </p>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
