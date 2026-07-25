@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Makwall Products</title>
+<meta name="description" content="Privacy Policy for Makwall Products — an MSME registered software services provider based in Mangalagiri, Andhra Pradesh. Learn how we collect, use, and protect your information.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: '#F5F6F2', ink: '#13161B', mute: '#585F6B',
+          faint: '#9AA0A9', panel: '#FFFFFF', hair: '#E1E4DF',
+          navy: '#0E1830', navy2: '#1B2A52',
+          signal: '#FF5B1F', signaldim: '#FFEDE3',
+          ok: '#17B26A', okdim: '#E7F8EF',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #F5F6F2; }
+  ::-webkit-scrollbar { width: 9px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #D8DBD3; border-radius: 5px; }
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1.5px;
+    background: #FF5B1F; transition: width .25s ease;
+  }
+  .nav-link:hover::after { width: 100%; }
+  .fade-up { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  .fade-up.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up { transition: none; opacity: 1; transform: none; }
+  }
+  input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible {
+    outline: 2px solid #FF5B1F; outline-offset: 2px;
+  }
+  .section-link { transition: color .2s, border-color .2s; }
+  .section-link:hover { color: #FF5B1F; border-color: #FF5B1F; }
+</style>
+</head>
+<body class="bg-paper text-ink font-body antialiased">
+
+<!-- ============ NAV ============ -->
+<header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-hair">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-7 h-7 rounded-md bg-navy flex items-center justify-center">
+        <span class="text-signal font-display font-700 text-sm">M</span>
+      </div>
+      <span class="font-display font-700 text-lg tracking-tight">Makwall Products</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-mute">
+      <a href="/#services" class="nav-link hover:text-ink">Services</a>
+      <a href="/#work" class="nav-link hover:text-ink">Work</a>
+      <a href="/#process" class="nav-link hover:text-ink">Process</a>
+      <a href="/#industries" class="nav-link hover:text-ink">Industries</a>
+      <a href="/#contact" class="nav-link hover:text-ink">Contact</a>
+    </nav>
+    <a href="/#contact" class="bg-navy text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-navy2 transition-colors">
+      Start a project
+    </a>
+  </div>
+</header>
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="bg-navy text-white">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 pt-16 pb-16 sm:pt-20 sm:pb-20">
+    <div class="flex items-center gap-2 text-xs font-mono text-white/50 mb-5">
+      <span class="w-1.5 h-1.5 rounded-full bg-signal"></span>
+      LEGAL · PRIVACY POLICY
+    </div>
+    <h1 class="font-display font-700 text-3xl sm:text-5xl leading-[1.05] tracking-tight max-w-3xl">
+      Privacy Policy
+    </h1>
+    <p class="text-white/60 text-lg mt-4 max-w-xl leading-relaxed">
+      Last updated: <span class="text-white font-medium">July 25, 2026</span>
+    </p>
+    <div class="mt-6 flex flex-wrap gap-2">
+      <span class="text-xs font-mono text-white/50 bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg">
+        Effective: July 25, 2026
+      </span>
+      <span class="text-xs font-mono text-white/50 bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg">
+        Jurisdiction: India
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTENT ============ -->
+<div class="max-w-6xl mx-auto px-5 sm:px-8 py-12 sm:py-16">
+  <div class="grid lg:grid-cols-12 gap-10">
+
+    <!-- Sidebar (desktop) -->
+    <aside class="hidden lg:block lg:col-span-3">
+      <div class="sticky top-24 space-y-1">
+        <p class="text-xs font-mono text-faint uppercase tracking-wider mb-3">On this page</p>
+        <a href="#information-collected" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Information Collected</a>
+        <a href="#purpose" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Purpose of Collection</a>
+        <a href="#cookies" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Cookies</a>
+        <a href="#third-party" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Third-Party Services</a>
+        <a href="#international-transfers" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">International Data Transfers</a>
+        <a href="#whatsapp" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">WhatsApp Business Platform</a>
+        <a href="#payment" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Payment Information</a>
+        <a href="#security" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Data Security</a>
+        <a href="#retention" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Data Retention</a>
+        <a href="#rights" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">User Rights</a>
+        <a href="#business-use" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Business Use</a>
+        <a href="#contact-info" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Contact Information</a>
+        <a href="#updates" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Policy Updates</a>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <div class="lg:col-span-9 space-y-12">
+
+      <!-- INTRO -->
+      <section class="fade-up">
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute leading-relaxed">
+            Makwall Products ("we," "our," "us") is committed to protecting your privacy. This Privacy Policy
+            explains how we collect, use, disclose, and safeguard your information when you visit our website
+            <a href="https://makwall.com" class="text-signal hover:underline">makwall.com</a> or use our software services.
+          </p>
+          <p class="text-mute leading-relaxed mt-4">
+            We are an MSME registered software services provider (NIC 58201) based in Mangalagiri, Andhra Pradesh, India.
+            By using our website and services, you agree to the collection and use of information in accordance with this policy.
+          </p>
+        </div>
+      </section>
+
+      <!-- 1. INFORMATION COLLECTED -->
+      <section id="information-collected" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">01</span>
+          <h2 class="font-display font-700 text-xl">Information We Collect</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed mb-4">
+            We collect only the information necessary to provide our software services. The types of information
+            we may collect include:
+          </p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Name</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Business Name</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Email Address</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Phone Number</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>WhatsApp Number</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Business Workflow Information</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Automation Requirements</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Project Requirements</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Contact Form Messages</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Technical Information (for website functionality)</div>
+          </div>
+          <p class="text-mute text-sm leading-relaxed mt-4 pt-4 border-t border-hair">
+            <span class="font-medium text-ink">How we collect it:</span> Directly from you when you fill out contact forms,
+            communicate with us via email or WhatsApp, or engage us for software development services.
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. PURPOSE OF COLLECTION -->
+      <section id="purpose" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">02</span>
+          <h2 class="font-display font-700 text-xl">Purpose of Collection</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed mb-4">We use the information we collect for the following purposes:</p>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-ok mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Respond to enquiries</p><p class="text-xs text-mute">Answer questions about our services and provide quotes</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-ok mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Build software</p><p class="text-xs text-mute">Develop custom CRMs, websites, dashboards, and automation systems</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-ok mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Deliver WhatsApp automation</p><p class="text-xs text-mute">Send automated messages via Meta WhatsApp Business Platform</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-ok mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Customer support</p><p class="text-xs text-mute">Assist with setup, troubleshooting, and ongoing service</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-ok mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Service communication</p><p class="text-xs text-mute">Send updates about projects, maintenance, and billing</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-ok mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Improve our services</p><p class="text-xs text-mute">Analyze usage patterns to build better software</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-ok mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Meet legal obligations</p><p class="text-xs text-mute">Comply with applicable Indian laws and regulations</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. COOKIES -->
+      <section id="cookies" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">03</span>
+          <h2 class="font-display font-700 text-xl">Cookies</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            Our website may use essential cookies and similar technologies required for proper website
+            functionality. Cookies are small text files stored on your device by your browser.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            If analytics or additional tracking technologies are introduced in the future, this Privacy Policy
+            will be updated accordingly.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            You can control cookie preferences through your browser settings. Disabling cookies may affect
+            certain features of the website.
+          </p>
+        </div>
+      </section>
+
+      <!-- 4. THIRD-PARTY SERVICES -->
+      <section id="third-party" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">04</span>
+          <h2 class="font-display font-700 text-xl">Third-Party Services</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed mb-4">
+            We use the following third-party service providers to deliver our software solutions. Each provider
+            processes data under their own privacy policies and applicable data protection laws:
+          </p>
+          <div class="divide-y divide-hair">
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Meta (WhatsApp Cloud API)</span>
+              <span class="text-xs text-mute">Message delivery &amp; automation</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Supabase</span>
+              <span class="text-xs text-mute">Database &amp; backend infrastructure</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Razorpay</span>
+              <span class="text-xs text-mute">Payment processing</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Google Workspace &amp; Sheets</span>
+              <span class="text-xs text-mute">Business operations &amp; data management</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">n8n</span>
+              <span class="text-xs text-mute">Workflow automation</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Brevo</span>
+              <span class="text-xs text-mute">Transactional email</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Cloudflare</span>
+              <span class="text-xs text-mute">CDN, security &amp; performance</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. INTERNATIONAL DATA TRANSFERS -->
+      <section id="international-transfers" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">05</span>
+          <h2 class="font-display font-700 text-xl">International Data Transfers</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            Some third-party providers we use — such as Meta, Cloudflare, and Supabase — may process or store
+            information on servers located outside India. These providers offer services globally and may transfer
+            data to jurisdictions where their infrastructure is maintained.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            Where such transfers occur, the processing of your information is governed by the respective
+            provider's privacy policy and applicable laws. We rely on providers who commit to recognized
+            data protection standards where available.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            If you have questions about how a specific provider handles your data, we encourage you to review
+            their privacy policy or contact us for more information.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. WHATSAPP BUSINESS PLATFORM -->
+      <section id="whatsapp" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">06</span>
+          <h2 class="font-display font-700 text-xl">WhatsApp Business Platform Usage</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            Makwall Products uses the Meta WhatsApp Business Platform (Cloud API) to send automated messages
+            on behalf of our clients. These messages are triggered by real business events — such as payment
+            reminders, appointment confirmations, order updates, and renewal notifications.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            <strong>Opt-in:</strong> Messages are only sent to end users who have explicitly opted in to receive
+            communications from our clients. We do not send unsolicited messages.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            <strong>Opt-out:</strong> Recipients may opt out of receiving WhatsApp messages using the opt-out
+            mechanism provided by the respective business.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            <strong>Data handling:</strong> WhatsApp numbers and message content are processed through Meta's
+            infrastructure in accordance with Meta's privacy policy. We do not use WhatsApp data for purposes
+            other than delivering the automation service our clients have requested.
+          </p>
+        </div>
+      </section>
+
+      <!-- 7. PAYMENT INFORMATION -->
+      <section id="payment" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">07</span>
+          <h2 class="font-display font-700 text-xl">Payment Information</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            All payment transactions are processed through Razorpay, a PCI-DSS compliant payment gateway.
+            We do not collect, store, or process credit card numbers, debit card numbers, or bank account
+            details on our servers.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            Payment information submitted during transactions is handled directly by Razorpay under their
+            privacy policy and security standards. We may retain basic billing information (invoice number,
+            transaction ID, date, amount) for accounting and tax purposes as required by Indian law.
+          </p>
+        </div>
+      </section>
+
+      <!-- 8. DATA SECURITY -->
+      <section id="security" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">08</span>
+          <h2 class="font-display font-700 text-xl">Data Security</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            We implement reasonable technical and organizational measures designed to protect personal information
+            against unauthorized access, disclosure, alteration, or destruction. These include:
+          </p>
+          <ul class="list-disc list-inside text-sm text-mute mt-3 space-y-1">
+            <li>Secure data storage via Supabase with row-level security and encrypted connections</li>
+            <li>HTTPS encryption for all data transmitted to and from our website</li>
+            <li>Cloudflare security features including DDoS protection and web application firewall</li>
+            <li>Restricted access to client data on a need-to-know basis</li>
+          </ul>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            No method of electronic storage or transmission is 100% secure. While we strive to protect your
+            personal information, we cannot guarantee absolute security. In the event of a data breach, we
+            will respond appropriately in accordance with applicable legal obligations.
+          </p>
+        </div>
+      </section>
+
+      <!-- 9. DATA RETENTION -->
+      <section id="retention" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">09</span>
+          <h2 class="font-display font-700 text-xl">Data Retention</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            We retain personal information only for as long as reasonably necessary to provide our services,
+            comply with legal obligations, resolve disputes, and enforce agreements.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            <strong>Client project data:</strong> Retained for the duration of the service agreement plus a
+            reasonable period thereafter for backup and legal compliance purposes. Clients may request deletion
+            of their data after project completion.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            <strong>Enquiry and contact form data:</strong> Retained as long as reasonably needed to address
+            the enquiry, unless a client relationship is established.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            <strong>Financial and accounting records:</strong> May be retained for the period required under
+            applicable Indian laws.
+          </p>
+        </div>
+      </section>
+
+      <!-- 10. USER RIGHTS -->
+      <section id="rights" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">10</span>
+          <h2 class="font-display font-700 text-xl">Your Rights</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed mb-4">
+            Under applicable data protection laws in India, you have the following rights regarding your
+            personal information:
+          </p>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <i data-lucide="chevron-right" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Right to Access</p><p class="text-xs text-mute">Request a copy of the personal data we hold about you</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="chevron-right" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Right to Correction</p><p class="text-xs text-mute">Request correction of inaccurate or incomplete data</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="chevron-right" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Right to Deletion</p><p class="text-xs text-mute">Request deletion of your personal data, subject to legal retention requirements</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="chevron-right" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Right to Withdraw Consent</p><p class="text-xs text-mute">Withdraw previously given consent for data processing</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="chevron-right" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Right to Grievance Redressal</p><p class="text-xs text-mute">Raise a concern regarding our data handling practices and expect a timely response</p></div>
+            </div>
+          </div>
+          <p class="text-mute text-sm leading-relaxed mt-4 pt-4 border-t border-hair">
+            To exercise any of these rights, please contact us at <a href="mailto:makwallproducts@gmail.com" class="text-signal hover:underline">makwallproducts@gmail.com</a>.
+            We will respond to your request within a reasonable timeframe.
+          </p>
+        </div>
+      </section>
+
+      <!-- 11. BUSINESS USE -->
+      <section id="business-use" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">11</span>
+          <h2 class="font-display font-700 text-xl">Business Use</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            Our services are intended primarily for businesses and organizations. They are designed to support
+            commercial operations such as customer management, sales automation, and internal workflow
+            optimization — not for personal or household use.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            We do not knowingly target or collect information from children. If we become aware that personal
+            information from a child has been submitted to us through our business-facing services, we will
+            delete it promptly.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            If you believe a child has provided us with personal information, please contact us at
+            <a href="mailto:makwallproducts@gmail.com" class="text-signal hover:underline">makwallproducts@gmail.com</a>.
+          </p>
+        </div>
+      </section>
+
+      <!-- 12. CONTACT INFORMATION -->
+      <section id="contact-info" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">12</span>
+          <h2 class="font-display font-700 text-xl">Contact Information</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed mb-4">
+            If you have any questions, concerns, or requests regarding this Privacy Policy or our data
+            practices, you may contact us at:
+          </p>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-start gap-3">
+              <i data-lucide="building-2" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <div>
+                <p class="font-medium">Makwall Products</p>
+                <p class="text-mute text-xs">MSME Registered Software Services Provider (NIC 58201)</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <p class="text-mute">Door No. 5-178/D/2, Kopperla PG &amp; Hostel, Atmakur, APSP Camp Road, Mangalagiri, Guntur, Andhra Pradesh 522503, India</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="mail" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <a href="mailto:makwallproducts@gmail.com" class="text-signal hover:underline">makwallproducts@gmail.com</a>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="phone" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <a href="tel:+918179823846" class="text-signal hover:underline">+91 81798 23846</a>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="globe" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <a href="https://makwall.com" class="text-signal hover:underline">makwall.com</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13. POLICY UPDATES -->
+      <section id="updates" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">13</span>
+          <h2 class="font-display font-700 text-xl">Changes to This Privacy Policy</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            We may update this Privacy Policy from time to time to reflect changes in our practices, legal
+            obligations, or the services we offer. When we make changes, we will update the "Last updated"
+            date at the top of this policy.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            Material changes will be communicated by posting a notice on our website. We encourage you to
+            review this policy periodically.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            Continued use of our website or services after any changes to this policy constitutes your
+            acceptance of the revised policy.
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-navy text-white/50 border-t border-white/10">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-8">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center">
+          <span class="text-signal font-display font-700 text-xs">M</span>
+        </div>
+        <span class="font-display font-600 text-sm text-white/80">Makwall Products</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-mono">
+        <a href="privacy-policy.html" class="text-white/60 hover:text-white/80 transition-colors">Privacy Policy</a>
+        <span class="text-white/20">·</span>
+        <a href="terms-and-conditions.html" class="text-white/40 hover:text-white/70 transition-colors">Terms &amp; Conditions</a>
+        <span class="text-white/20">·</span>
+        <a href="data-deletion.html" class="text-white/40 hover:text-white/70 transition-colors">Data Deletion</a>
+        <span class="text-white/20">·</span>
+        <span>© <span id="year"></span> Makwall Products. All rights reserved.</span>
+      </div>
+    </div>
+    <p class="text-xs font-mono mt-5 leading-relaxed max-w-2xl">
+      Makwall Products is a registered micro-enterprise, based at Door No. 5-178/D/2, Kopperla PG &amp; Hostel,
+      Atmakur, APSP Camp Road, Mangalagiri, Guntur, Andhra Pradesh 522503, India.
+    </p>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms &amp; Conditions — Makwall Products</title>
+<meta name="description" content="Terms and Conditions for Makwall Products — an MSME registered software services provider based in Mangalagiri, Andhra Pradesh. Terms of service for software development and WhatsApp automation.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: '#F5F6F2', ink: '#13161B', mute: '#585F6B',
+          faint: '#9AA0A9', panel: '#FFFFFF', hair: '#E1E4DF',
+          navy: '#0E1830', navy2: '#1B2A52',
+          signal: '#FF5B1F', signaldim: '#FFEDE3',
+          ok: '#17B26A', okdim: '#E7F8EF',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #F5F6F2; }
+  ::-webkit-scrollbar { width: 9px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #D8DBD3; border-radius: 5px; }
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1.5px;
+    background: #FF5B1F; transition: width .25s ease;
+  }
+  .nav-link:hover::after { width: 100%; }
+  .fade-up { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  .fade-up.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up { transition: none; opacity: 1; transform: none; }
+  }
+  input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible {
+    outline: 2px solid #FF5B1F; outline-offset: 2px;
+  }
+  .section-link { transition: color .2s, border-color .2s; }
+  .section-link:hover { color: #FF5B1F; border-color: #FF5B1F; }
+</style>
+</head>
+<body class="bg-paper text-ink font-body antialiased">
+
+<!-- ============ NAV ============ -->
+<header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-hair">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <div class="w-7 h-7 rounded-md bg-navy flex items-center justify-center">
+        <span class="text-signal font-display font-700 text-sm">M</span>
+      </div>
+      <span class="font-display font-700 text-lg tracking-tight">Makwall Products</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-mute">
+      <a href="index.html#services" class="nav-link hover:text-ink">Services</a>
+      <a href="index.html#work" class="nav-link hover:text-ink">Work</a>
+      <a href="index.html#process" class="nav-link hover:text-ink">Process</a>
+      <a href="index.html#industries" class="nav-link hover:text-ink">Industries</a>
+      <a href="index.html#contact" class="nav-link hover:text-ink">Contact</a>
+    </nav>
+    <a href="index.html#contact" class="bg-navy text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-navy2 transition-colors">
+      Start a project
+    </a>
+  </div>
+</header>
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="bg-navy text-white">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 pt-16 pb-16 sm:pt-20 sm:pb-20">
+    <div class="flex items-center gap-2 text-xs font-mono text-white/50 mb-5">
+      <span class="w-1.5 h-1.5 rounded-full bg-signal"></span>
+      LEGAL · TERMS &amp; CONDITIONS
+    </div>
+    <h1 class="font-display font-700 text-3xl sm:text-5xl leading-[1.05] tracking-tight max-w-3xl">
+      Terms &amp; Conditions
+    </h1>
+    <p class="text-white/60 text-lg mt-4 max-w-xl leading-relaxed">
+      Last updated: <span class="text-white font-medium">July 25, 2026</span>
+    </p>
+    <div class="mt-6 flex flex-wrap gap-2">
+      <span class="text-xs font-mono text-white/50 bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg">
+        Effective: July 25, 2026
+      </span>
+      <span class="text-xs font-mono text-white/50 bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg">
+        Jurisdiction: India
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTENT ============ -->
+<div class="max-w-6xl mx-auto px-5 sm:px-8 py-12 sm:py-16">
+  <div class="grid lg:grid-cols-12 gap-10">
+
+    <!-- Sidebar (desktop) -->
+    <aside class="hidden lg:block lg:col-span-3">
+      <div class="sticky top-24 space-y-1">
+        <p class="text-xs font-mono text-faint uppercase tracking-wider mb-3">On this page</p>
+        <a href="#scope" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Services &amp; Scope</a>
+        <a href="#quotations" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Project Quotations &amp; Delivery</a>
+        <a href="#client-responsibilities" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Client Responsibilities</a>
+        <a href="#whatsapp" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">WhatsApp Business Platform</a>
+        <a href="#embedded-signup" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Embedded Signup &amp; API Usage</a>
+        <a href="#payments" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Payments &amp; Refunds</a>
+        <a href="#revisions" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Revisions, Ownership &amp; Maintenance</a>
+        <a href="#third-party" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Third-Party Services</a>
+        <a href="#suspension" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Suspension &amp; Service Availability</a>
+        <a href="#force-majeure" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Force Majeure</a>
+        <a href="#liability" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Limitation of Liability</a>
+        <a href="#governing-law" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Governing Law &amp; Disputes</a>
+        <a href="#contact" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Contact</a>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <div class="lg:col-span-9 space-y-12">
+
+      <!-- INTRO -->
+      <section class="fade-up">
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute leading-relaxed">
+            These Terms &amp; Conditions ("Terms") govern the use of software development services provided by
+            <strong>Makwall Products</strong> ("we," "our," "us") to you ("Client," "you"). By engaging our
+            services, you agree to be bound by these Terms.
+          </p>
+          <p class="text-mute leading-relaxed mt-4">
+            We are an MSME registered software services provider (NIC 58201) based in Mangalagiri, Andhra Pradesh, India.
+            Please read these Terms carefully before using our services.
+          </p>
+        </div>
+      </section>
+
+      <!-- 01. SERVICES & SCOPE -->
+      <section id="scope" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">01</span>
+          <h2 class="font-display font-700 text-xl">Services &amp; Scope</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed mb-4">
+            Makwall Products provides software development and automation services, including:
+          </p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Business Websites</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Custom CRM Development</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>WhatsApp Automation</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Workflow Automation</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>AI Integrations</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Business Dashboards</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Internal Management Systems</div>
+          </div>
+          <p class="text-mute text-sm leading-relaxed mt-4 pt-4 border-t border-hair">
+            The specific scope of work for each project will be defined in a separate project proposal or
+            statement of work provided to the Client.
+          </p>
+        </div>
+      </section>
+
+      <!-- 02. PROJECT QUOTATIONS & DELIVERY -->
+      <section id="quotations" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">02</span>
+          <h2 class="font-display font-700 text-xl">Project Quotations &amp; Delivery</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            Project quotations are provided based on the requirements shared by the Client. Quotations are
+            valid for the period stated in the proposal and may be revised if the scope of work changes.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            Delivery timelines are estimated and communicated in the project proposal. Timelines may be
+            affected by:
+          </p>
+          <ul class="list-disc list-inside text-sm text-mute mt-2 space-y-1">
+            <li>Changes in project scope</li>
+            <li>Delays in Client feedback or approvals</li>
+            <li>Dependencies on third-party platforms (Meta, Google, etc.)</li>
+            <li>Unforeseen technical challenges</li>
+          </ul>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            Acceptance criteria and review periods will be defined in the project proposal or agreement.
+          </p>
+        </div>
+      </section>
+
+      <!-- 03. CLIENT RESPONSIBILITIES -->
+      <section id="client-responsibilities" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">03</span>
+          <h2 class="font-display font-700 text-xl">Client Responsibilities</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed mb-4">
+            The Client agrees to:
+          </p>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <i data-lucide="chevron-right" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Own the phone number</p><p class="text-xs text-mute">The Client must own or have authorized use of the phone number used for WhatsApp Business integration</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="chevron-right" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Comply with WhatsApp &amp; Meta policies</p><p class="text-xs text-mute">The Client must adhere to Meta's WhatsApp Business Platform policies, including messaging and opt-in requirements</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="chevron-right" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Provide accurate business information</p><p class="text-xs text-mute">The Client must provide accurate and complete information required for platform registration and compliance</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="chevron-right" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Not send spam</p><p class="text-xs text-mute">The Client must not use the system to send unsolicited messages or engage in prohibited messaging practices</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="chevron-right" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Provide timely feedback</p><p class="text-xs text-mute">The Client must provide feedback, approvals, and required information promptly to avoid project delays</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="chevron-right" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <div><p class="text-sm font-medium">Maintain account access</p><p class="text-xs text-mute">The Client is responsible for maintaining access to their Meta Business Account, WhatsApp Business Account, domains, hosting, and any third-party accounts required for the project</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04. WHATSAPP BUSINESS PLATFORM -->
+      <section id="whatsapp" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">04</span>
+          <h2 class="font-display font-700 text-xl">WhatsApp Business Platform</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            Makwall Products builds solutions using the Meta WhatsApp Business Platform (Cloud API) where
+            applicable. The Client acknowledges and agrees that:
+          </p>
+          <div class="space-y-3 mt-4">
+            <div class="bg-signaldim rounded-lg p-4">
+              <p class="text-sm font-medium text-ink">Message delivery depends on Meta</p>
+              <p class="text-xs text-mute mt-1">WhatsApp message delivery is subject to Meta's infrastructure, policies, and any applicable rate limits or restrictions imposed by the WhatsApp Business Platform.</p>
+            </div>
+            <div class="bg-signaldim rounded-lg p-4">
+              <p class="text-sm font-medium text-ink">Template approval depends on Meta</p>
+              <p class="text-xs text-mute mt-1">WhatsApp message templates must be submitted to and approved by Meta before they can be used. Makwall cannot guarantee approval timelines or outcomes.</p>
+            </div>
+            <div class="bg-signaldim rounded-lg p-4">
+              <p class="text-sm font-medium text-ink">Account restrictions are controlled by Meta</p>
+              <p class="text-xs text-mute mt-1">Meta may restrict, suspend, or disable WhatsApp Business Accounts for violations of their policies. Makwall is not responsible for such actions.</p>
+            </div>
+          </div>
+          <p class="text-mute text-sm leading-relaxed mt-4 pt-4 border-t border-hair">
+            Client use of WhatsApp services is subject to Meta's Terms and Policies. The Client is responsible
+            for maintaining compliance with Meta's WhatsApp Business Platform requirements.
+          </p>
+        </div>
+      </section>
+
+      <!-- 05. EMBEDDED SIGNUP & API USAGE -->
+      <section id="embedded-signup" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">05</span>
+          <h2 class="font-display font-700 text-xl">Embedded Signup &amp; API Usage</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            Where applicable, Makwall Products may assist clients using Meta Embedded Signup or other
+            approved onboarding methods to:
+          </p>
+          <ul class="list-disc list-inside text-sm text-mute mt-3 space-y-1">
+            <li>Connect the Client's WhatsApp Business Account (WABA)</li>
+            <li>Manage WhatsApp message templates on behalf of the Client</li>
+            <li>Configure and manage webhooks for message events</li>
+            <li>Manage messaging assets required for WhatsApp automation</li>
+          </ul>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            <strong>API Usage:</strong> Makwall may access WhatsApp APIs and other third-party APIs only
+            after receiving explicit authorization from the Client. API usage is limited to the scope
+            necessary to deliver the agreed services.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            The Client may revoke API access at any time by contacting us. Revocation may affect the
+            functionality of the services provided.
+          </p>
+        </div>
+      </section>
+
+      <!-- 06. PAYMENTS & REFUNDS -->
+      <section id="payments" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">06</span>
+          <h2 class="font-display font-700 text-xl">Payments &amp; Refunds</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            Payment terms are specified in the project proposal or invoice. Unless otherwise agreed:
+          </p>
+          <ul class="list-disc list-inside text-sm text-mute mt-3 space-y-1">
+            <li>A deposit may be required before work begins</li>
+            <li>Balance payments are due as per the agreed schedule</li>
+            <li>Payments are processed through Razorpay</li>
+          </ul>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            <strong>Refunds:</strong> Deposits are generally non-refundable once work has started. Refund
+            eligibility depends on the value of completed work and any third-party costs incurred. Custom
+            software development involves significant initial effort, and full refunds may not be available
+            after development has begun.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            Any refunds, if applicable, will be processed after deducting the value of work completed and
+            any third-party costs incurred.
+          </p>
+        </div>
+      </section>
+
+      <!-- 07. REVISIONS, OWNERSHIP & MAINTENANCE -->
+      <section id="revisions" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">07</span>
+          <h2 class="font-display font-700 text-xl">Revisions, Ownership &amp; Maintenance</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            <strong>Revisions:</strong> The number of revision rounds included in the project will be
+            specified in the proposal. Additional revisions beyond the agreed scope may be charged separately.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            <strong>Ownership:</strong> Upon full payment, the Client owns the project-specific deliverables
+            built for their project. Makwall Products retains ownership of reusable frameworks, libraries,
+            templates, utilities, internal tools, and general-purpose components that are not unique to the
+            Client's project.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            <strong>Maintenance &amp; Support:</strong> Ongoing maintenance and support are provided only
+            when included in the agreed proposal or under a separate maintenance or support agreement. Unless
+            otherwise stated, project pricing does not include ongoing maintenance beyond the initial delivery
+            and handover.
+          </p>
+        </div>
+      </section>
+
+      <!-- 08. THIRD-PARTY SERVICES -->
+      <section id="third-party" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">08</span>
+          <h2 class="font-display font-700 text-xl">Third-Party Services</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed mb-4">
+            Makwall Products uses the following third-party platforms and services as part of its service
+            delivery. Each is governed by its own terms of service and privacy policy:
+          </p>
+          <div class="divide-y divide-hair">
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Meta (WhatsApp Cloud API)</span>
+              <span class="text-xs text-mute">Messaging &amp; automation</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Supabase</span>
+              <span class="text-xs text-mute">Database &amp; backend</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Google (Workspace, Sheets, Apps Script)</span>
+              <span class="text-xs text-mute">Business operations &amp; data</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Razorpay</span>
+              <span class="text-xs text-mute">Payment processing</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">n8n</span>
+              <span class="text-xs text-mute">Workflow automation</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Brevo</span>
+              <span class="text-xs text-mute">Transactional email</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Cloudflare</span>
+              <span class="text-xs text-mute">CDN, security &amp; performance</span>
+            </div>
+          </div>
+          <p class="text-mute text-sm leading-relaxed mt-4 pt-4 border-t border-hair">
+            Changes made by third-party providers (including pricing, APIs, policies, features, or
+            availability) may affect the services we provide. Makwall Products is not responsible for the
+            uptime, security, or policy changes of third-party platforms. Clients are encouraged to review
+            the terms of each third-party service used in their project.
+          </p>
+        </div>
+      </section>
+
+      <!-- 09. SUSPENSION & SERVICE AVAILABILITY -->
+      <section id="suspension" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">09</span>
+          <h2 class="font-display font-700 text-xl">Suspension &amp; Service Availability</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            <strong>Suspension by Meta:</strong> If Meta blocks, suspends, or restricts the Client's
+            WhatsApp Business Account for any reason, Makwall Products is not responsible for the resulting
+            loss of service. The Client is responsible for resolving the issue with Meta directly.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            <strong>Service Availability:</strong> The Client acknowledges that downtime may occur due to
+            factors outside Makwall's control, including but not limited to:
+          </p>
+          <ul class="list-disc list-inside text-sm text-mute mt-2 space-y-1">
+            <li>Meta platform outages or maintenance</li>
+            <li>Cloudflare CDN or security service interruptions</li>
+            <li>Supabase database or infrastructure issues</li>
+            <li>Google Workspace or Google API disruptions</li>
+            <li>Internet connectivity issues</li>
+            <li>Planned maintenance with reasonable notice</li>
+          </ul>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            We strive to maintain high availability but do not guarantee uninterrupted service. Monthly
+            uptime commitments, if any, will be specified in a separate service level agreement.
+          </p>
+        </div>
+      </section>
+
+      <!-- 10. FORCE MAJEURE -->
+      <section id="force-majeure" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">10</span>
+          <h2 class="font-display font-700 text-xl">Force Majeure</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            Neither party will be held responsible for delays or failure to perform obligations caused by
+            events beyond reasonable control, including but not limited to natural disasters, internet
+            outages, government actions, major third-party platform failures, or other circumstances that
+            make performance commercially unreasonable.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            The affected party will notify the other as soon as reasonably practicable and will take
+            reasonable steps to resume performance as soon as possible.
+          </p>
+        </div>
+      </section>
+
+      <!-- 11. LIMITATION OF LIABILITY -->
+      <section id="liability" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">11</span>
+          <h2 class="font-display font-700 text-xl">Limitation of Liability</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            To the maximum extent permitted by applicable law, our liability will be limited to the amount
+            paid for the affected services. Makwall Products shall not be liable for any indirect, incidental,
+            special, consequential, or punitive damages arising out of or related to the use of our services.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            This limitation does not apply to liability that cannot be excluded under Indian law, including
+            liability for gross negligence or fraud.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-4 pt-4 border-t border-hair">
+            <strong>Meta Policy Disclaimer:</strong> Makwall Products builds solutions using the Meta
+            WhatsApp Business Platform where applicable. The Client's use of WhatsApp services is subject
+            to Meta's Terms and Policies.
+          </p>
+        </div>
+      </section>
+
+      <!-- 12. GOVERNING LAW & DISPUTE RESOLUTION -->
+      <section id="governing-law" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">12</span>
+          <h2 class="font-display font-700 text-xl">Governing Law &amp; Dispute Resolution</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            These Terms shall be governed by and construed in accordance with the laws of India.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            In the event of any dispute arising out of or relating to these Terms or the services provided,
+            the parties shall first attempt to resolve the dispute amicably through informal negotiation.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            If the dispute cannot be resolved within 30 days of negotiation, the courts with jurisdiction
+            in Guntur, Andhra Pradesh shall have exclusive jurisdiction over any legal proceedings.
+          </p>
+        </div>
+      </section>
+
+      <!-- 13. CONTACT -->
+      <section id="contact" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">13</span>
+          <h2 class="font-display font-700 text-xl">Contact</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed mb-4">
+            If you have any questions regarding these Terms &amp; Conditions, you may contact us at:
+          </p>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-start gap-3">
+              <i data-lucide="building-2" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <div>
+                <p class="font-medium">Makwall Products</p>
+                <p class="text-mute text-xs">MSME Registered Software Services Provider (NIC 58201)</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <p class="text-mute">Door No. 5-178/D/2, Kopperla PG &amp; Hostel, Atmakur, APSP Camp Road, Mangalagiri, Guntur, Andhra Pradesh 522503, India</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="mail" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <a href="mailto:makwallproducts@gmail.com" class="text-signal hover:underline">makwallproducts@gmail.com</a>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="phone" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <a href="tel:+918179823846" class="text-signal hover:underline">+91 81798 23846</a>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="globe" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>
+              <a href="https://makwall.com" class="text-signal hover:underline">makwall.com</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-navy text-white/50 border-t border-white/10">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-8">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center">
+          <span class="text-signal font-display font-700 text-xs">M</span>
+        </div>
+        <span class="font-display font-600 text-sm text-white/80">Makwall Products</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-mono">
+        <a href="privacy-policy.html" class="text-white/40 hover:text-white/70 transition-colors">Privacy Policy</a>
+        <span class="text-white/20">·</span>
+        <a href="terms-and-conditions.html" class="text-white/60 hover:text-white/80 transition-colors">Terms &amp; Conditions</a>
+        <span class="text-white/20">·</span>
+        <a href="data-deletion.html" class="text-white/40 hover:text-white/70 transition-colors">Data Deletion</a>
+        <span class="text-white/20">·</span>
+        <span>© <span id="year"></span> Makwall Products. All rights reserved.</span>
+      </div>
+    </div>
+    <p class="text-xs font-mono mt-5 leading-relaxed max-w-2xl">
+      Makwall Products is a registered micro-enterprise, based at Door No. 5-178/D/2, Kopperla PG &amp; Hostel,
+      Atmakur, APSP Camp Road, Mangalagiri, Guntur, Andhra Pradesh 522503, India.
+    </p>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

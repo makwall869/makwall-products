@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Deletion — Makwall Products</title>
+<meta name="description" content="Request deletion of your personal data from Makwall Products. Learn how to delete CRM data, WhatsApp connections, and more.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: '#F5F6F2', ink: '#13161B', mute: '#585F6B',
+          faint: '#9AA0A9', panel: '#FFFFFF', hair: '#E1E4DF',
+          navy: '#0E1830', navy2: '#1B2A52',
+          signal: '#FF5B1F', signaldim: '#FFEDE3',
+          ok: '#17B26A', okdim: '#E7F8EF',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #F5F6F2; }
+  ::-webkit-scrollbar { width: 9px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #D8DBD3; border-radius: 5px; }
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1.5px;
+    background: #FF5B1F; transition: width .25s ease;
+  }
+  .nav-link:hover::after { width: 100%; }
+  .fade-up { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  .fade-up.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up { transition: none; opacity: 1; transform: none; }
+  }
+  input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible {
+    outline: 2px solid #FF5B1F; outline-offset: 2px;
+  }
+  .section-link { transition: color .2s, border-color .2s; }
+  .section-link:hover { color: #FF5B1F; border-color: #FF5B1F; }
+</style>
+</head>
+<body class="bg-paper text-ink font-body antialiased">
+
+<!-- ============ NAV ============ -->
+<header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-hair">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <div class="w-7 h-7 rounded-md bg-navy flex items-center justify-center">
+        <span class="text-signal font-display font-700 text-sm">M</span>
+      </div>
+      <span class="font-display font-700 text-lg tracking-tight">Makwall Products</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-mute">
+      <a href="index.html#services" class="nav-link hover:text-ink">Services</a>
+      <a href="index.html#work" class="nav-link hover:text-ink">Work</a>
+      <a href="index.html#process" class="nav-link hover:text-ink">Process</a>
+      <a href="index.html#industries" class="nav-link hover:text-ink">Industries</a>
+      <a href="index.html#contact" class="nav-link hover:text-ink">Contact</a>
+    </nav>
+    <a href="index.html#contact" class="bg-navy text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-navy2 transition-colors">
+      Start a project
+    </a>
+  </div>
+</header>
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="bg-navy text-white">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 pt-16 pb-16 sm:pt-20 sm:pb-20">
+    <div class="flex items-center gap-2 text-xs font-mono text-white/50 mb-5">
+      <span class="w-1.5 h-1.5 rounded-full bg-signal"></span>
+      LEGAL · DATA DELETION
+    </div>
+    <h1 class="font-display font-700 text-3xl sm:text-5xl leading-[1.05] tracking-tight max-w-3xl">
+      Data Deletion
+    </h1>
+    <p class="text-white/60 text-lg mt-4 max-w-xl leading-relaxed">
+      Last updated: <span class="text-white font-medium">July 25, 2026</span>
+    </p>
+    <div class="mt-6 flex flex-wrap gap-2">
+      <span class="text-xs font-mono text-white/50 bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg">
+        Effective: July 25, 2026
+      </span>
+      <span class="text-xs font-mono text-white/50 bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg">
+        Jurisdiction: India
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTENT ============ -->
+<div class="max-w-6xl mx-auto px-5 sm:px-8 py-12 sm:py-16">
+  <div class="grid lg:grid-cols-12 gap-10">
+
+    <!-- Sidebar (desktop) -->
+    <aside class="hidden lg:block lg:col-span-3">
+      <div class="sticky top-24 space-y-1">
+        <p class="text-xs font-mono text-faint uppercase tracking-wider mb-3">On this page</p>
+        <a href="#how-to-request" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">How to Request Deletion</a>
+        <a href="#customer-data" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Customer Data</a>
+        <a href="#whatsapp-assets" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">WhatsApp Assets</a>
+        <a href="#connected-accounts" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Connected Accounts</a>
+        <a href="#logs" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Logs &amp; Backups</a>
+        <a href="#third-party" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Third-Party Providers</a>
+        <a href="#verification" class="section-link block text-sm text-mute border-l-2 border-hair pl-3 py-1.5">Verification &amp; Processing Time</a>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <div class="lg:col-span-9 space-y-12">
+
+      <!-- INTRO -->
+      <section class="fade-up">
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute leading-relaxed">
+            This page explains how Clients and end users can request the deletion of their personal data
+            from Makwall Products' systems. We respect your right to control your data and will process
+            deletion requests in accordance with applicable laws.
+          </p>
+          <p class="text-mute leading-relaxed mt-4">
+            We are an MSME registered software services provider (NIC 58201) based in Mangalagiri, Andhra Pradesh, India.
+          </p>
+        </div>
+      </section>
+
+      <!-- 01. HOW TO REQUEST -->
+      <section id="how-to-request" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">01</span>
+          <h2 class="font-display font-700 text-xl">How to Request Deletion</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            To request deletion of your personal data, send an email to:
+          </p>
+          <div class="bg-signaldim rounded-lg p-4 my-4 text-center">
+            <a href="mailto:makwallproducts@gmail.com" class="text-signal font-mono text-lg font-semibold hover:underline">makwallproducts@gmail.com</a>
+            <p class="text-xs text-mute mt-1">Subject: Data Deletion Request</p>
+          </div>
+          <p class="text-mute text-sm leading-relaxed">
+            Please include the following in your request:
+          </p>
+          <ul class="list-disc list-inside text-sm text-mute mt-2 space-y-1">
+            <li>Your full name and business name</li>
+            <li>Registered email address or phone number used with our services</li>
+            <li>Specific details about the data you want deleted</li>
+            <li>Any relevant project or account identifiers</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 02. CUSTOMER DATA -->
+      <section id="customer-data" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">02</span>
+          <h2 class="font-display font-700 text-xl">Customer Data</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed mb-4">
+            Upon receiving a valid deletion request, we will delete the following types of data stored
+            in our systems:
+          </p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>CRM Records</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Contacts</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>WhatsApp Connections</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Projects</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Lead Information</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Contact Form Submissions</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03. WHATSAPP ASSETS -->
+      <section id="whatsapp-assets" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">03</span>
+          <h2 class="font-display font-700 text-xl">WhatsApp Assets</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            Makwall Products cannot delete Meta-owned assets — such as WhatsApp message templates, business
+            account details, or phone number registrations — without the Client's authorization. These assets
+            are owned and controlled by the Client's Meta Business Account.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            To delete WhatsApp assets:
+          </p>
+          <ul class="list-disc list-inside text-sm text-mute mt-2 space-y-1">
+            <li>The Client must provide explicit authorization to Makwall to disconnect or delete WhatsApp assets</li>
+            <li>Alternatively, the Client can manage these assets directly through their Meta Business Account</li>
+            <li>Once authorized, we will remove WhatsApp configuration and stored data from our systems</li>
+          </ul>
+          <p class="text-mute text-sm leading-relaxed mt-4 pt-4 border-t border-hair text-xs">
+            <span class="font-medium text-ink">Note:</span> Deletion of assets on Meta's side is subject to
+            Meta's own processes and timelines.
+          </p>
+        </div>
+      </section>
+
+      <!-- 04. CONNECTED ACCOUNTS -->
+      <section id="connected-accounts" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">04</span>
+          <h2 class="font-display font-700 text-xl">Connected Accounts</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed mb-4">
+            If a Client disconnects or requests disconnection, we will remove:
+          </p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Access Tokens</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Webhook Subscriptions</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Stored IDs</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Business IDs</div>
+            <div class="flex items-center gap-2 text-sm text-mute"><span class="w-1.5 h-1.5 rounded-full bg-signal shrink-0"></span>Phone Number IDs</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05. LOGS & BACKUPS -->
+      <section id="logs" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">05</span>
+          <h2 class="font-display font-700 text-xl">Logs &amp; Backups</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            Some logs may be retained for legitimate business purposes, including:
+          </p>
+          <ul class="list-disc list-inside text-sm text-mute mt-3 space-y-1">
+            <li><strong>Security</strong> — logs related to authentication and access attempts</li>
+            <li><strong>Fraud prevention</strong> — records of suspicious or anomalous activity</li>
+            <li><strong>Legal compliance</strong> — records required to be retained under applicable law</li>
+            <li><strong>Audit</strong> — logs of data access and system changes</li>
+          </ul>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            <strong>Backups:</strong> Deletion from active systems does not immediately remove data from
+            backup systems. Data in backups will be overwritten during the regular backup rotation cycle,
+            which may take additional time.
+          </p>
+        </div>
+      </section>
+
+      <!-- 06. THIRD-PARTY PROVIDERS -->
+      <section id="third-party" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">06</span>
+          <h2 class="font-display font-700 text-xl">Third-Party Providers</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            Deletion of data may also involve the following third-party providers used in our service delivery.
+            Each provider has its own deletion processes and timelines:
+          </p>
+          <div class="divide-y divide-hair mt-4">
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Supabase</span>
+              <span class="text-xs text-mute">Database &amp; backend</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Meta</span>
+              <span class="text-xs text-mute">WhatsApp &amp; messaging</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Google</span>
+              <span class="text-xs text-mute">Workspace, Sheets, Apps Script</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Brevo</span>
+              <span class="text-xs text-mute">Transactional email</span>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <span class="font-mono text-sm font-medium">Cloudflare</span>
+              <span class="text-xs text-mute">CDN &amp; security</span>
+            </div>
+          </div>
+          <p class="text-mute text-sm leading-relaxed mt-4 pt-4 border-t border-hair">
+            Where data is stored with third-party providers, we will coordinate deletion with the provider
+            where possible. Clients may also contact these providers directly for data deletion requests.
+          </p>
+        </div>
+      </section>
+
+      <!-- 07. VERIFICATION & PROCESSING TIME -->
+      <section id="verification" class="fade-up scroll-mt-24">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="font-mono text-signal text-sm">07</span>
+          <h2 class="font-display font-700 text-xl">Verification &amp; Processing Time</h2>
+        </div>
+        <div class="bg-white border border-hair rounded-xl p-6 sm:p-8">
+          <p class="text-mute text-sm leading-relaxed">
+            <strong>Identity Verification:</strong> Before processing any deletion request, we will verify
+            the identity of the requestor to ensure the data is being deleted by the authorized person or
+            business. We may request additional information to confirm identity.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            <strong>Processing Time:</strong> Once identity is verified, we will process the deletion request
+            within <strong>5 to 10 business days</strong>. Complex requests involving multiple systems or
+            third-party providers may take longer.
+          </p>
+          <p class="text-mute text-sm leading-relaxed mt-3">
+            We will confirm once the deletion is complete. If we are unable to delete certain data due to
+            legal or operational requirements, we will explain the reason in our response.
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-navy text-white/50 border-t border-white/10">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-8">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center">
+          <span class="text-signal font-display font-700 text-xs">M</span>
+        </div>
+        <span class="font-display font-600 text-sm text-white/80">Makwall Products</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-mono">
+        <a href="privacy-policy.html" class="text-white/40 hover:text-white/70 transition-colors">Privacy Policy</a>
+        <span class="text-white/20">·</span>
+        <a href="terms-and-conditions.html" class="text-white/40 hover:text-white/70 transition-colors">Terms &amp; Conditions</a>
+        <span class="text-white/20">·</span>
+        <a href="data-deletion.html" class="text-white/60 hover:text-white/80 transition-colors">Data Deletion</a>
+        <span class="text-white/20">·</span>
+        <span>© <span id="year"></span> Makwall Products. All rights reserved.</span>
+      </div>
+    </div>
+    <p class="text-xs font-mono mt-5 leading-relaxed max-w-2xl">
+      Makwall Products is a registered micro-enterprise, based at Door No. 5-178/D/2, Kopperla PG &amp; Hostel,
+      Atmakur, APSP Camp Road, Mangalagiri, Guntur, Andhra Pradesh 522503, India.
+    </p>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
