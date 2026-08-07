@@ -53,7 +53,7 @@
   }
   .nav-link:hover::after { width: 100%; }
 
-  /* Pipeline signature animation */
+  
   .pipeline-track { position: relative; }
   .pipeline-line {
     position: absolute; top: 50%; left: 0; right: 0; height: 2px;
@@ -93,16 +93,55 @@
   @media (prefers-reduced-motion: reduce) {
     .pipeline-pulse, .node-active-1, .node-active-2, .node-active-3, .node-active-4 { animation: none !important; }
     .fade-up { transition: none; opacity: 1; transform: none; }
+    .price-value, .billed-value, .savings-badge, .period-value { transition: none; }
   }
 
   input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible {
     outline: 2px solid #FF5B1F; outline-offset: 2px;
   }
+
+  
+  .nav-link.active { color: #13161B; }
+  .nav-link.active::after { width: 100%; }
+
+  .pricing-selector-scroll::-webkit-scrollbar { display: none; }
+  .pricing-selector-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+
+  .price-value, .billed-value, .savings-badge, .period-value {
+    display: inline-block;
+    transition: opacity .25s ease, transform .25s ease;
+  }
+  .price-value.swap, .billed-value.swap, .savings-badge.swap, .period-value.swap {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  .pricing-card-featured {
+    position: relative;
+  }
+  .pricing-card-featured::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 0.75rem;
+    padding: 1.5px;
+    background: #FF5B1F;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-grid {
+      grid-template-rows: 1fr;
+    }
+  }
 </style>
 </head>
 <body class="bg-paper text-ink font-body antialiased">
 
-<!-- ============ NAV ============ -->
+
 <header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-hair">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
     <a href="#top" class="flex items-center gap-2">
@@ -112,11 +151,21 @@
       <span class="font-display font-700 text-lg tracking-tight">Makwall Products</span>
     </a>
     <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-mute">
-      <a href="#services" class="nav-link hover:text-ink">Services</a>
-      <a href="#work" class="nav-link hover:text-ink">Work</a>
-      <a href="#process" class="nav-link hover:text-ink">Process</a>
+      <a href="#services" data-nav="services" class="nav-link hover:text-ink">Services</a>
+      <div class="relative" id="pricing-nav-wrapper">
+        <a href="#pricing" data-nav="pricing" id="pricing-nav-trigger" class="nav-link hover:text-ink" aria-haspopup="true" aria-expanded="false">Pricing</a>
+        <div id="pricing-dropdown" class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-3 w-60 bg-white border border-hair rounded-xl shadow-lg z-50 py-2" role="menu">
+          <button type="button" data-service-target="website" role="menuitem" class="pricing-dropdown-option w-full text-left px-4 py-2.5 text-sm text-mute hover:bg-paper hover:text-ink transition-colors">Website Development</button>
+          <button type="button" data-service-target="gymcrm" role="menuitem" class="pricing-dropdown-option w-full text-left px-4 py-2.5 text-sm text-mute hover:bg-paper hover:text-ink transition-colors">Gym CRM</button>
+          <button type="button" data-service-target="whatsapp" role="menuitem" class="pricing-dropdown-option w-full text-left px-4 py-2.5 text-sm text-mute hover:bg-paper hover:text-ink transition-colors">WhatsApp Automation</button>
+          <button type="button" data-service-target="ai" role="menuitem" class="pricing-dropdown-option w-full text-left px-4 py-2.5 text-sm text-mute hover:bg-paper hover:text-ink transition-colors">AI Automation</button>
+          <button type="button" data-service-target="custom" role="menuitem" class="pricing-dropdown-option w-full text-left px-4 py-2.5 text-sm text-mute hover:bg-paper hover:text-ink transition-colors">Custom Business Solutions</button>
+        </div>
+      </div>
+      <a href="#work" data-nav="work" class="nav-link hover:text-ink">Work</a>
+      <a href="#process" data-nav="process" class="nav-link hover:text-ink">Process</a>
       <a href="#industries" class="nav-link hover:text-ink">Industries</a>
-      <a href="#contact" class="nav-link hover:text-ink">Contact</a>
+      <a href="#contact" data-nav="contact" class="nav-link hover:text-ink">Contact</a>
     </nav>
     <a href="#contact" class="bg-navy text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-navy2 transition-colors">
       Start a project
@@ -124,7 +173,7 @@
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
+
 <section id="top" class="bg-navy text-white relative overflow-hidden">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 pt-16 pb-20 sm:pt-24 sm:pb-28">
     <div class="flex items-center gap-2 text-xs font-mono text-white/50 mb-6">
@@ -150,7 +199,7 @@
       </a>
     </div>
 
-    <!-- Signature: full customer lifecycle pipeline -->
+    
     <div class="mt-16 sm:mt-20 bg-white/[0.04] border border-white/10 rounded-2xl p-6 sm:p-8">
       <p class="text-xs font-mono text-white/40 mb-6 uppercase tracking-wide">From first click to renewed — one complete customer lifecycle</p>
       <div class="pipeline-track h-16 sm:h-20 relative flex items-center">
@@ -191,7 +240,7 @@
   </div>
 </section>
 
-<!-- ============ ABOUT ============ -->
+
 <section class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
   <div class="grid md:grid-cols-12 gap-10">
     <div class="md:col-span-4">
@@ -234,7 +283,7 @@
   </div>
 </section>
 
-<!-- ============ WHO WE BUILD FOR ============ -->
+
 <section class="bg-white border-y border-hair">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
     <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">Who we build for</p>
@@ -271,7 +320,7 @@
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
+
 <section id="services" class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
   <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">Services</p>
   <h2 class="font-display font-700 text-2xl sm:text-3xl mb-10 max-w-xl">What we build, module by module.</h2>
@@ -343,7 +392,7 @@
   </div>
 </section>
 
-<!-- ============ REAL WORK ============ -->
+
 <section id="work" class="bg-white border-y border-hair">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
     <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">Real work</p>
@@ -415,7 +464,7 @@
   </div>
 </section>
 
-<!-- ============ PROCESS ============ -->
+
 <section id="process" class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
   <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">Process</p>
   <h2 class="font-display font-700 text-2xl sm:text-3xl mb-10 max-w-xl">How a project actually moves.</h2>
@@ -448,7 +497,7 @@
   </div>
 </section>
 
-<!-- ============ TECHNOLOGIES ============ -->
+
 <section class="bg-white border-y border-hair">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
     <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">Technologies</p>
@@ -467,7 +516,7 @@
   </div>
 </section>
 
-<!-- ============ WHY MAKWALL ============ -->
+
 <section class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
   <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">Why Makwall Products</p>
   <h2 class="font-display font-700 text-2xl sm:text-3xl mb-10 max-w-xl">Built by the person who supports it.</h2>
@@ -493,7 +542,73 @@
   </div>
 </section>
 
-<!-- ============ CLIENT TESTIMONIALS (placeholder, honest) ============ -->
+
+<section id="pricing" class="bg-white border-y border-hair">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
+
+    
+    <p class="text-xs font-mono text-signal uppercase tracking-wide mb-3">Pricing</p>
+    <h2 class="font-display font-700 text-2xl sm:text-3xl mb-4 max-w-xl leading-tight">
+      Professional Business Solutions
+    </h2>
+    <p class="text-mute text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+      Choose the solution that fits your business today. Expand your business later with additional
+      automation services as your company grows.
+    </p>
+
+    
+    <div class="mb-8" role="tablist" aria-label="Select a service">
+      <div class="pricing-selector-scroll flex overflow-x-auto gap-2 p-1.5 border border-hair rounded-xl bg-white" id="service-selector">
+        <button type="button" data-service="website" aria-pressed="true" role="tab"
+          class="service-btn flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors">
+          <i data-lucide="globe" class="w-4 h-4 shrink-0"></i>
+          <span>Website Development</span>
+          <span class="status-dot inline-flex items-center gap-1 text-[11px] font-mono text-ok">
+            <span class="w-1.5 h-1.5 rounded-full bg-ok"></span>Available
+          </span>
+        </button>
+        <button type="button" data-service="gymcrm" aria-pressed="false" role="tab"
+          class="service-btn flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors">
+          <i data-lucide="dumbbell" class="w-4 h-4 shrink-0"></i>
+          <span>Gym CRM</span>
+          <span class="status-dot inline-flex items-center gap-1 text-[11px] font-mono text-ok">
+            <span class="w-1.5 h-1.5 rounded-full bg-ok"></span>Available
+          </span>
+        </button>
+        <button type="button" data-service="whatsapp" aria-pressed="false" role="tab"
+          class="service-btn flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors">
+          <i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>
+          <span>WhatsApp Automation</span>
+          <span class="status-dot inline-flex items-center gap-1 text-[11px] font-mono text-ok">
+            <span class="w-1.5 h-1.5 rounded-full bg-ok"></span>Available
+          </span>
+        </button>
+        <button type="button" data-service="ai" aria-pressed="false" role="tab"
+          class="service-btn flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors">
+          <i data-lucide="sparkles" class="w-4 h-4 shrink-0"></i>
+          <span>AI Automation</span>
+          <span class="status-dot inline-flex items-center gap-1 text-[11px] font-mono text-faint">
+            <span class="w-1.5 h-1.5 rounded-full bg-faint"></span>Not Available
+          </span>
+        </button>
+        <button type="button" data-service="custom" aria-pressed="false" role="tab"
+          class="service-btn flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors">
+          <i data-lucide="wrench" class="w-4 h-4 shrink-0"></i>
+          <span>Custom Business Solutions</span>
+          <span class="status-dot inline-flex items-center gap-1 text-[11px] font-mono text-signal">
+            <span class="w-1.5 h-1.5 rounded-full bg-signal"></span>Custom Pricing
+          </span>
+        </button>
+      </div>
+    </div>
+
+    
+    <div id="pricing-content" aria-live="polite"></div>
+
+  </div>
+</section>
+
+
 <section class="bg-white border-y border-hair">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 py-14 sm:py-16 text-center">
     <p class="text-xs font-mono text-faint uppercase tracking-wide mb-2">What clients are saying</p>
@@ -501,7 +616,7 @@
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
+
 <section id="contact" class="bg-navy text-white">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
     <div class="grid md:grid-cols-2 gap-12">
@@ -557,7 +672,7 @@
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
+
 <footer class="bg-navy text-white/50 border-t border-white/10">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 py-8">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
@@ -592,6 +707,636 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: 0.15 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  
+  
+  
+
+  const PRICING_SERVICES = {
+    website: {
+      name: 'Website Development',
+      available: true,
+      plans: {
+        hosting: {
+          name: 'Hosting',
+          code: 'WEB-01',
+          description: 'Reliable cloud hosting with everything you need to launch and run your business website.',
+          pricing: {
+            monthly:   { price: 499, billed: 499,   period: 'Billed Monthly',         savings: 0  },
+            sixMonths: { price: 459, billed: 2754,  period: 'Billed every 6 months',  savings: 8  },
+            yearly:    { price: 424, billed: 5088,  period: 'Billed every year',      savings: 15 },
+            twoYears:  { price: 399, billed: 9576,  period: 'Billed every 24 months', savings: 20 }
+          },
+          features: [
+            'Cloud Hosting',
+            'Custom Domain',
+            'SSL Certificate',
+            'Cloudflare CDN',
+            'Daily Backups',
+            'Mobile Responsive',
+            'Basic SEO',
+            'Google Analytics',
+            'Google Search Console'
+          ],
+          cta: { text: 'Get Started', href: '#contact' }
+        },
+        managed: {
+          name: 'Managed Hosting',
+          code: 'WEB-02',
+          badge: 'Recommended',
+          extraHeader: 'Everything in Hosting',
+          description: 'Everything in Hosting, plus ongoing content updates, bug fixes, and priority support.',
+          pricing: {
+            monthly:   { price: 799, billed: 799,    period: 'Billed Monthly',         savings: 0  },
+            sixMonths: { price: 735, billed: 4410,   period: 'Billed every 6 months',  savings: 8  },
+            yearly:    { price: 679, billed: 8148,   period: 'Billed every year',      savings: 15 },
+            twoYears:  { price: 639, billed: 15336,  period: 'Billed every 24 months', savings: 20 }
+          },
+          extraFeatures: [
+            '24×7 Technical Support',
+            'Website Content Updates',
+            'Trainer Profile Updates',
+            'Media Content Updates',
+            'Business Information Updates',
+            'Pricing Updates',
+            'Minor UI Adjustments',
+            'Website Configuration Updates',
+            'Bug Fixes',
+            'Priority Technical Support'
+          ],
+          cta: { text: 'Choose Managed Hosting', href: '#contact' }
+        }
+      }
+    },
+    gymcrm:   {
+      name: 'Gym CRM',
+      available: true,
+      plans: {
+        standard: {
+          name: 'Gym CRM',
+          code: 'GYM-01',
+          description: 'Complete gym management software for memberships, attendance, renewals, trainers, billing, reporting, and customer management.',
+          pricing: {
+            yearly: { price: 7000, billed: 7000, period: 'Billed yearly', savings: 0 }
+          },
+          features: [
+            'Member Management',
+            'Attendance Tracking',
+            'Membership Renewals',
+            'Payment Tracking',
+            'Dashboard',
+            'Trainer Management',
+            'Reports',
+            'Customer Management'
+          ],
+          cta: { text: 'Contact Us', href: '#contact' }
+        },
+        personalTraining: {
+          name: 'Gym CRM + Personal Training',
+          code: 'GYM-02',
+          badge: 'Recommended',
+          extraHeader: 'Everything in Gym CRM',
+          description: 'Everything in Gym CRM, plus a complete Personal Training module for trainer assignment, workout tracking, and progress reporting.',
+          pricing: {
+            yearly: { price: 8000, billed: 8000, period: 'Billed yearly', savings: 0 }
+          },
+          extraFeatures: [
+            'Personal Training Module',
+            'Trainer Assignment',
+            'Workout Tracking',
+            'Training Progress',
+            'Personal Training Reports'
+          ],
+          cta: { text: 'Contact Us', href: '#contact' }
+        }
+      }
+    },
+    whatsapp: {
+      name: 'WhatsApp Automation',
+      available: true,
+      plans: {
+        starter: {
+          name: 'Starter',
+          code: 'WA-01',
+          description: 'Best for small businesses getting started with WhatsApp automation.',
+          pricing: {
+            setup: { price: 3000, billed: 3000, period: 'One-time setup fee', savings: 0 }
+          },
+          features: [
+            'WhatsApp Cloud API Setup',
+            'Meta Business Configuration',
+            'Business Verification Guidance',
+            'Dedicated Business Phone Setup',
+            'Template Message Setup',
+            'Basic Automation',
+            'Testing',
+            'Deployment'
+          ],
+          cta: { text: 'Contact Us', href: '#contact' }
+        },
+        professional: {
+          name: 'Professional',
+          code: 'WA-02',
+          badge: 'Recommended',
+          extraHeader: 'Everything in Starter',
+          description: 'Everything in Starter, plus advanced automations and integrations for growing businesses.',
+          pricing: {
+            setup: { price: 5000, billed: 5000, period: 'One-time setup fee', savings: 0 }
+          },
+          extraFeatures: [
+            'n8n Automation',
+            'Lead Capture Automation',
+            'Payment Reminder Automation',
+            'Appointment Reminder Automation',
+            'Order Update Automation',
+            'CRM Integration',
+            'Google Sheets Integration',
+            'Webhook Integration',
+            'Testing & Deployment'
+          ],
+          cta: { text: 'Contact Us', href: '#contact' }
+        },
+        enterprise: {
+          name: 'Enterprise',
+          code: 'WA-03',
+          description: 'Advanced WhatsApp automation for organisations with complex workflows and integrations.',
+          pricing: {
+            custom: { price: null, custom: true, displayPrice: 'Custom Pricing', period: 'Tailored to your requirements' }
+          },
+          features: [
+            'Advanced Workflow Automation',
+            'Multi-system Integration',
+            'Custom APIs',
+            'Advanced CRM Integration',
+            'Multiple Automation Flows',
+            'Ongoing Support'
+          ],
+          cta: { text: 'Contact Us', href: '#contact' }
+        }
+      }
+    },
+    ai:       {
+      name: 'AI Automation',
+      available: true,
+      infoCard: {
+        title: 'AI Automation',
+        status: 'Not Available',
+        statusColor: 'faint',
+        badge: null,
+        icon: 'sparkles',
+        description: 'We build AI-powered business automation systems tailored to your workflow.',
+        features: [
+          'AI Chatbots',
+          'AI Voice Agents',
+          'AI Customer Support',
+          'AI WhatsApp Automation',
+          'AI Instagram Automation',
+          'AI Lead Qualification',
+          'AI Lead Generation',
+          'AI Appointment Booking',
+          'AI Follow-up Automation',
+          'AI Email Automation',
+          'AI Workflow Automation',
+          'AI Business Process Automation',
+          'AI CRM Integration',
+          'AI Data Processing',
+          'AI Document Processing',
+          'AI Knowledge Base',
+          'AI Business Assistants',
+          'AI Reporting & Analytics',
+          'AI Custom Integrations',
+          'Custom AI Agents'
+        ],
+        bottomText: "Currently not available. We'll let you know as soon as it's ready.",
+        cta: { text: 'Currently Unavailable', disabled: true }
+      }
+    },
+    custom:   {
+      name: 'Custom Business Solutions',
+      available: true,
+      infoCard: {
+        title: 'Custom Business Solutions',
+        status: 'Custom Pricing',
+        badge: null,
+        icon: 'wrench',
+        description: 'Every business has different workflows. Pricing depends entirely on your custom requirements, integrations, and project complexity.',
+        features: [],
+        bottomText: 'Pricing depends on your customized setup.',
+        cta: { text: 'Contact Us', href: '#contact' }
+      }
+    }
+  };
+
+  const BILLING_CYCLES = [
+    { key: 'monthly',   label: 'Monthly' },
+    { key: 'sixMonths', label: '6 Months' },
+    { key: 'yearly',    label: 'Yearly' },
+    { key: 'twoYears',  label: '2 Years' }
+  ];
+
+  const BILLING_SUFFIX = {
+    monthly: '/month', sixMonths: '/6 months', yearly: '/year', twoYears: '/2 years',
+    setup: ' Setup', custom: ''
+  };
+
+  function hasMultipleBillingCycles(svc) {
+    if (!svc || !svc.plans) return false;
+    const planKeysList = Object.values(svc.plans).map(p => Object.keys(p.pricing));
+    if (planKeysList.length === 0) return false;
+    if (planKeysList.some(keys => keys.length < 2)) return false;
+    const first = planKeysList[0];
+    return planKeysList.every(keys =>
+      keys.length === first.length && first.every(k => keys.includes(k))
+    );
+  }
+
+  let currentService = 'website';
+  let currentBilling = 'yearly';
+
+  
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, c => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+  }
+  function inr(n) { return '₹' + Number(n).toLocaleString('en-IN'); }
+
+  function animateSwap(el, newText) {
+    if (!el) return;
+    el.classList.add('swap');
+    setTimeout(() => {
+      el.textContent = newText;
+      el.classList.remove('swap');
+    }, 200);
+  }
+
+  
+  function renderBillingSelector() {
+    const buttons = BILLING_CYCLES.map(c => {
+      const active = c.key === currentBilling;
+      const cls = active
+        ? 'billing-btn bg-navy text-white'
+        : 'billing-btn text-mute hover:text-ink';
+      return '<button type="button" data-billing="' + c.key + '" aria-pressed="' + active + '" role="tab"'
+        + ' class="' + cls + ' px-4 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors">'
+        + escapeHtml(c.label) + '</button>';
+    }).join('');
+
+    return '<div class="mb-8" role="tablist" aria-label="Select billing cycle">'
+      + '<div class="pricing-selector-scroll flex overflow-x-auto gap-2 p-1.5 border border-hair rounded-xl bg-white">'
+      + buttons + '</div></div>';
+  }
+
+  function renderPlanCard(planKey, plan) {
+    const isFeatured = !!plan.badge;
+    const cardClasses = isFeatured
+      ? 'pricing-card-featured border border-hair rounded-xl p-6 sm:p-8 bg-signaldim flex flex-col relative'
+      : 'border border-hair rounded-xl p-6 sm:p-8 bg-white flex flex-col';
+
+    const codeColor = isFeatured ? 'text-ink/50' : 'text-faint';
+    const descColor = isFeatured ? 'text-ink/70' : 'text-mute';
+    const billedColor = isFeatured ? 'text-ink/65' : 'text-mute';
+    const periodColor = isFeatured ? 'text-ink/45' : 'text-faint';
+    const featureColor = 'text-ink/85';
+
+    const badge = isFeatured
+      ? '<span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-signal text-white text-[11px] font-mono px-2.5 py-1 rounded-full uppercase tracking-wide whitespace-nowrap">'
+        + escapeHtml(plan.badge) + '</span>'
+      : '';
+
+    const isExtra = !!plan.extraFeatures;
+    const features = isExtra
+      ? '<li class="flex items-start gap-2.5 text-[13px]"><i data-lucide="check" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>'
+        + '<span class="font-medium">' + escapeHtml(plan.extraHeader || ('Everything in ' + (plan.name || ''))) + '</span></li>'
+        + plan.extraFeatures.map(f =>
+          '<li class="flex items-start gap-2.5 text-[13px]">'
+          + '<i data-lucide="check" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>'
+          + '<span class="' + featureColor + '">' + escapeHtml(f) + '</span></li>'
+        ).join('')
+      : plan.features.map(f =>
+          '<li class="flex items-start gap-2.5 text-[13px]">'
+          + '<i data-lucide="check" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>'
+          + '<span class="' + featureColor + '">' + escapeHtml(f) + '</span></li>'
+        ).join('');
+
+    return '<div class="' + cardClasses + '" data-plan="' + planKey + '">'
+      + badge
+      + '<div class="flex items-center justify-between mb-2">'
+        + '<h3 class="font-display font-600 text-xl">' + escapeHtml(plan.name) + '</h3>'
+        + '<span class="text-[11px] font-mono ' + codeColor + '">' + escapeHtml(plan.code || '') + '</span>'
+      + '</div>'
+      + '<p class="text-sm ' + descColor + ' mb-6">' + escapeHtml(plan.description) + '</p>'
+      + (function() {
+          const planBillingKeys = Object.keys(plan.pricing);
+          const initialBilling = planBillingKeys.includes(currentBilling) ? currentBilling : planBillingKeys[0];
+          const initialSuffix = BILLING_SUFFIX[initialBilling] || '';
+          return '<div class="mb-4">'
+            + '<div class="flex items-baseline gap-1.5">'
+              + '<span class="price-value font-display font-700 text-4xl">—</span>'
+              + '<span class="suffix text-base ' + (isFeatured ? 'text-ink/60' : 'text-mute') + '">' + escapeHtml(initialSuffix) + '</span>'
+            + '</div>'
+            + '<div class="flex items-center gap-2 mt-3">'
+              + '<span class="savings-badge inline-block text-[11px] font-mono px-2 py-1 rounded-full bg-signal text-white" style="display:none">Save 0%</span>'
+            + '</div>'
+          + '</div>';
+        })()
+      + '<div class="mb-6 pb-6 border-b ' + (isFeatured ? 'border-ink/10' : 'border-hair') + '">'
+        + '<p class="text-sm ' + billedColor + '"><span class="billed-value">Billed as —</span></p>'
+        + '<p class="text-[11px] font-mono ' + periodColor + ' mt-1.5 uppercase tracking-wide">'
+          + '<span class="period-value">—</span>'
+        + '</p>'
+      + '</div>'
+      + '<ul class="space-y-2.5 mb-8 flex-1">' + features + '</ul>'
+      + '<a href="' + escapeHtml(plan.cta.href) + '"'
+        + ' class="bg-signal text-white font-semibold text-sm px-5 py-3 rounded-lg hover:bg-signal/90 transition-colors text-center">'
+        + escapeHtml(plan.cta.text) + '</a>'
+    + '</div>';
+  }
+
+  function renderPlanCards() {
+    const svc = PRICING_SERVICES[currentService];
+    const planKeys = Object.keys(svc.plans);
+    const cols = planKeys.length >= 3 ? 'md:grid-cols-3' : 'md:grid-cols-2';
+    return '<div class="grid ' + cols + ' gap-5 pricing-grid">'
+      + planKeys.map(k => renderPlanCard(k, svc.plans[k])).join('')
+      + '</div>';
+  }
+
+  function renderComingSoon(svc) {
+    const desc = svc.description || "We're shaping this product right now. Pricing will appear here when it's ready.";
+    return '<div class="border border-hair rounded-xl bg-white p-10 sm:p-14 text-center">'
+      + '<div class="w-12 h-12 rounded-xl bg-signaldim flex items-center justify-center mx-auto mb-5">'
+        + '<i data-lucide="rocket" class="w-6 h-6 text-signal"></i>'
+      + '</div>'
+      + '<p class="text-xs font-mono text-signal uppercase tracking-wide mb-2">Coming Soon</p>'
+      + '<h3 class="font-display font-700 text-xl sm:text-2xl mb-3">' + escapeHtml(svc.name) + '</h3>'
+      + '<p class="text-mute text-sm sm:text-base leading-relaxed max-w-md mx-auto mb-6">' + escapeHtml(desc) + '</p>'
+      + '<span class="inline-block text-[11px] font-mono px-2.5 py-1 rounded-full bg-paper border border-hair text-faint mb-8">Pricing TBA</span>'
+      + '<div class="flex justify-center">'
+        + '<a href="#contact" class="bg-signal text-white font-semibold text-sm px-5 py-3 rounded-lg hover:bg-signal/90 transition-colors">'
+          + 'Get notified at launch'
+        + '</a>'
+      + '</div>'
+    + '</div>';
+  }
+
+  function renderNotAvailable(svc) {
+    const desc = svc.description || "Currently not available. We'll let you know as soon as it's ready.";
+    const iconName = svc.notAvailableIcon || 'box';
+    return '<div class="border border-hair rounded-xl bg-white p-10 sm:p-14 text-center">'
+      + '<div class="w-12 h-12 rounded-xl bg-paper border border-hair flex items-center justify-center mx-auto mb-5">'
+        + '<i data-lucide="' + escapeHtml(iconName) + '" class="w-6 h-6 text-faint"></i>'
+      + '</div>'
+      + '<p class="text-xs font-mono text-faint uppercase tracking-wide mb-2">Not Available</p>'
+      + '<h3 class="font-display font-700 text-xl sm:text-2xl mb-3">' + escapeHtml(svc.name) + '</h3>'
+      + '<p class="text-mute text-sm sm:text-base leading-relaxed max-w-md mx-auto">' + escapeHtml(desc) + '</p>'
+    + '</div>';
+  }
+
+  function renderInfoCard(svc) {
+    const info = svc.infoCard || {};
+
+    const iconHtml = '<div class="w-12 h-12 rounded-xl bg-signaldim flex items-center justify-center mx-auto mb-5">'
+      + '<i data-lucide="' + escapeHtml(info.icon || 'box') + '" class="w-6 h-6 text-signal"></i>'
+      + '</div>';
+
+    const statusHtml = '<p class="text-xs font-mono text-' + (info.statusColor || 'signal') + ' uppercase tracking-wide mb-2">'
+      + escapeHtml(info.status || 'Available') + '</p>';
+
+    const titleHtml = '<h3 class="font-display font-700 text-xl sm:text-2xl mb-3">'
+      + escapeHtml(info.title || svc.name) + '</h3>';
+
+    const badgeHtml = info.badge
+      ? '<span class="inline-block text-[11px] font-mono px-2.5 py-1 rounded-full bg-okdim text-ok mb-4">'
+        + escapeHtml(info.badge) + '</span>'
+      : '';
+
+    const descHtml = info.description
+      ? '<p class="text-mute text-sm sm:text-base leading-relaxed max-w-md mx-auto mb-6">'
+        + escapeHtml(info.description) + '</p>'
+      : '';
+
+    const featuresHtml = (info.features && info.features.length)
+      ? '<ul class="space-y-2.5 mb-6 max-w-md mx-auto text-left">'
+        + info.features.map(f =>
+            '<li class="flex items-start gap-2.5 text-[13px] text-ink/85">'
+            + '<i data-lucide="check" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>'
+            + '<span>' + escapeHtml(f) + '</span>'
+            + '</li>'
+          ).join('')
+        + '</ul>'
+      : '';
+
+    const bottomHtml = '<p class="text-mute text-sm mb-6">' + escapeHtml(info.bottomText || '') + '</p>';
+
+    const cta = info.cta || { text: 'Contact Us', href: '#contact' };
+    const ctaHtml = cta.disabled
+      ? '<div class="flex justify-center">'
+        + '<button type="button" disabled class="bg-signal text-white font-semibold text-sm px-5 py-3 rounded-lg opacity-60 cursor-not-allowed">'
+          + escapeHtml(cta.text) + '</button>'
+        + '</div>'
+      : '<div class="flex justify-center">'
+        + '<a href="' + escapeHtml(cta.href) + '" class="bg-signal text-white font-semibold text-sm px-5 py-3 rounded-lg hover:bg-signal/90 transition-colors">'
+          + escapeHtml(cta.text) + '</a>'
+        + '</div>';
+
+    return '<div class="border border-hair rounded-xl bg-white p-10 sm:p-14 text-center">'
+      + iconHtml
+      + statusHtml
+      + titleHtml
+      + badgeHtml
+      + descHtml
+      + featuresHtml
+      + bottomHtml
+      + ctaHtml
+      + '</div>';
+  }
+
+  function renderPricing() {
+    const svc = PRICING_SERVICES[currentService];
+    const container = document.getElementById('pricing-content');
+    if (!container) return;
+
+    if (svc.plans) {
+      const showSelector = hasMultipleBillingCycles(svc);
+      container.innerHTML = (showSelector ? renderBillingSelector() : '') + renderPlanCards();
+      updatePrices();
+    } else if (svc.notAvailable) {
+      container.innerHTML = renderNotAvailable(svc);
+    } else if (svc.infoCard) {
+      container.innerHTML = renderInfoCard(svc);
+    } else if (!svc.available) {
+      container.innerHTML = renderComingSoon(svc);
+    } else {
+      container.innerHTML = renderComingSoon(svc);
+    }
+    lucide.createIcons();
+  }
+
+  function updatePrices() {
+    const svc = PRICING_SERVICES[currentService];
+    if (!svc.available || !svc.plans) return;
+    Object.keys(svc.plans).forEach(function(planKey) {
+      const plan = svc.plans[planKey];
+      const pricingKeys = Object.keys(plan.pricing);
+      const billingKey = pricingKeys.includes(currentBilling) ? currentBilling : pricingKeys[0];
+      const pricing = plan.pricing[billingKey];
+      const card = document.querySelector('[data-plan="' + planKey + '"]');
+      if (!card) return;
+
+      if (pricing.custom) {
+        animateSwap(card.querySelector('.price-value'), pricing.displayPrice || 'Custom');
+        const billedEl = card.querySelector('.billed-value');
+        const periodEl = card.querySelector('.period-value');
+        if (billedEl && billedEl.parentElement) billedEl.parentElement.style.display = 'none';
+        if (periodEl && periodEl.parentElement) periodEl.parentElement.style.display = 'none';
+        const savingsEl = card.querySelector('.savings-badge');
+        if (savingsEl) savingsEl.style.display = 'none';
+        const suffixEl = card.querySelector('.suffix');
+        if (suffixEl) suffixEl.textContent = '';
+        return;
+      }
+
+      animateSwap(card.querySelector('.price-value'), inr(pricing.price));
+
+      const billedText = 'Billed as ' + inr(pricing.billed) + ' ' + pricing.period.replace(/^Billed /, '');
+      animateSwap(card.querySelector('.billed-value'), billedText);
+
+      const savingsEl = card.querySelector('.savings-badge');
+      if (pricing.savings > 0) {
+        animateSwap(savingsEl, 'Save ' + pricing.savings + '%');
+        savingsEl.style.display = 'inline-block';
+      } else {
+        savingsEl.style.display = 'none';
+      }
+
+      animateSwap(card.querySelector('.period-value'), pricing.period);
+
+      const suffixEl = card.querySelector('.suffix');
+      if (suffixEl) suffixEl.textContent = BILLING_SUFFIX[billingKey] || '';
+    });
+  }
+
+  
+  function setActiveService(key) {
+    currentService = key;
+    document.querySelectorAll('.service-btn').forEach(function(btn) {
+      const isActive = btn.dataset.service === key;
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      btn.classList.toggle('bg-navy', isActive);
+      btn.classList.toggle('text-white', isActive);
+      btn.classList.toggle('hover:text-white', isActive);
+      btn.classList.toggle('text-mute', !isActive);
+      btn.classList.toggle('hover:text-ink', !isActive);
+    });
+    renderPricing();
+  }
+
+  function setActiveBilling(key) {
+    currentBilling = key;
+    document.querySelectorAll('.billing-btn').forEach(function(btn) {
+      const isActive = btn.dataset.billing === key;
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      btn.classList.toggle('bg-navy', isActive);
+      btn.classList.toggle('text-white', isActive);
+      btn.classList.toggle('text-mute', !isActive);
+      btn.classList.toggle('hover:text-ink', !isActive);
+    });
+    updatePrices();
+  }
+
+  
+  document.addEventListener('click', function(e) {
+    const serviceBtn = e.target.closest('.service-btn');
+    if (serviceBtn && serviceBtn.dataset.service) {
+      setActiveService(serviceBtn.dataset.service);
+      return;
+    }
+    const billingBtn = e.target.closest('.billing-btn');
+    if (billingBtn && billingBtn.dataset.billing) {
+      setActiveBilling(billingBtn.dataset.billing);
+    }
+  });
+
+  
+  setActiveService('website');
+  setActiveBilling('yearly');
+
+  
+  
+  
+  const pricingNavWrapper = document.getElementById('pricing-nav-wrapper');
+  const pricingNavTrigger = document.getElementById('pricing-nav-trigger');
+  const pricingDropdown = document.getElementById('pricing-dropdown');
+
+  function closePricingDropdown() {
+    if (!pricingDropdown) return;
+    pricingDropdown.classList.add('hidden');
+    if (pricingNavTrigger) pricingNavTrigger.setAttribute('aria-expanded', 'false');
+  }
+
+  function openPricingDropdown() {
+    if (!pricingDropdown) return;
+    pricingDropdown.classList.remove('hidden');
+    if (pricingNavTrigger) pricingNavTrigger.setAttribute('aria-expanded', 'true');
+  }
+
+  if (pricingNavTrigger && pricingDropdown) {
+    pricingNavTrigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (pricingDropdown.classList.contains('hidden')) {
+        openPricingDropdown();
+      } else {
+        closePricingDropdown();
+      }
+    });
+
+    document.addEventListener('click', function(e) {
+      if (pricingNavWrapper && !e.target.closest('#pricing-nav-wrapper')) {
+        closePricingDropdown();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closePricingDropdown();
+    });
+
+    pricingDropdown.querySelectorAll('.pricing-dropdown-option').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const target = btn.dataset.serviceTarget;
+        closePricingDropdown();
+        if (target && PRICING_SERVICES[target]) {
+          setActiveService(target);
+        }
+        const pricingSection = document.getElementById('pricing');
+        if (pricingSection) {
+          pricingSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  }
+
+  
+  
+  
+  const navSections = Array.from(document.querySelectorAll('section[id]'));
+  const navLinkMap = new Map();
+  document.querySelectorAll('.nav-link[data-nav]').forEach(function(link) {
+    navLinkMap.set(link.dataset.nav, link);
+  });
+
+  function setActiveNav(sectionId) {
+    navLinkMap.forEach(function(link, id) {
+      link.classList.toggle('active', id === sectionId);
+    });
+  }
+
+  const navObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) setActiveNav(entry.target.id);
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+  navSections.forEach(function(s) { navObserver.observe(s); });
 </script>
 </body>
 </html>
