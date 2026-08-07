@@ -87,6 +87,27 @@
     35%, 45% { box-shadow: 0 0 0 6px rgba(255,91,31,0.15); border-color: #FF5B1F; }
   }
 
+  
+  @media (max-width: 767px) {
+    .pipeline-pulse { display: none !important; }
+    .pipeline-track { height: auto !important; min-height: 128px; align-items: flex-start !important; }
+    .pipeline-line { top: 22px; }
+    .pipeline-track > div:not(.pipeline-line):not(.pipeline-pulse) {
+      position: static !important;
+      transform: none !important;
+      flex: 1 1 0%;
+      min-width: 0;
+    }
+    .pipeline-track > div:not(.pipeline-line):not(.pipeline-pulse) > span {
+      width: 100%;
+      max-width: 100px;
+      white-space: normal !important;
+      text-align: center;
+      line-height: 1.3;
+      overflow-wrap: break-word;
+    }
+  }
+
   .fade-up { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
   .fade-up.in { opacity: 1; transform: translateY(0); }
 
@@ -160,6 +181,7 @@
           <button type="button" data-service-target="whatsapp" role="menuitem" class="pricing-dropdown-option w-full text-left px-4 py-2.5 text-sm text-mute hover:bg-paper hover:text-ink transition-colors">WhatsApp Automation</button>
           <button type="button" data-service-target="ai" role="menuitem" class="pricing-dropdown-option w-full text-left px-4 py-2.5 text-sm text-mute hover:bg-paper hover:text-ink transition-colors">AI Automation</button>
           <button type="button" data-service-target="custom" role="menuitem" class="pricing-dropdown-option w-full text-left px-4 py-2.5 text-sm text-mute hover:bg-paper hover:text-ink transition-colors">Custom Business Solutions</button>
+          <button type="button" data-service-target="email" role="menuitem" class="pricing-dropdown-option w-full text-left px-4 py-2.5 text-sm text-mute hover:bg-paper hover:text-ink transition-colors">Email Automation</button>
         </div>
       </div>
       <a href="#work" data-nav="work" class="nav-link hover:text-ink">Work</a>
@@ -424,7 +446,7 @@
 
       <div class="border border-hair rounded-xl p-6 sm:p-7 flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-8">
         <div class="sm:w-40 shrink-0">
-          <span class="inline-block text-xs font-mono px-2 py-1 rounded-full bg-okdim text-ok">Completed</span>
+          <span class="inline-block text-xs font-mono px-2 py-1 rounded-full bg-okdim text-ok">In progress</span>
         </div>
         <div class="flex-1">
           <h3 class="font-display font-600 text-lg mb-1.5">Lead management system — tuition center</h3>
@@ -441,25 +463,6 @@
         <a href="#contact" class="text-sm font-semibold text-signal hover:text-signal/80 whitespace-nowrap shrink-0">Learn more →</a>
       </div>
 
-      <div class="border border-hair rounded-xl p-6 sm:p-7 flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-8">
-        <div class="sm:w-40 shrink-0">
-          <span class="inline-block text-xs font-mono px-2 py-1 rounded-full bg-okdim text-ok">Completed</span>
-        </div>
-        <div class="flex-1">
-          <h3 class="font-display font-600 text-lg mb-1.5">E-commerce platform — Elera</h3>
-          <p class="text-mute text-sm leading-relaxed mb-3">
-            A clothing e-commerce platform with Razorpay payment integration and automated WhatsApp notifications
-            triggered on order status changes, backed by a Supabase database.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">React</span>
-            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">Supabase</span>
-            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">Razorpay</span>
-            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">WhatsApp automation</span>
-          </div>
-        </div>
-        <a href="#contact" class="text-sm font-semibold text-signal hover:text-signal/80 whitespace-nowrap shrink-0">Learn more →</a>
-      </div>
     </div>
   </div>
 </section>
@@ -599,6 +602,14 @@
             <span class="w-1.5 h-1.5 rounded-full bg-signal"></span>Custom Pricing
           </span>
         </button>
+        <button type="button" data-service="email" aria-pressed="false" role="tab"
+          class="service-btn flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors">
+          <i data-lucide="mail" class="w-4 h-4 shrink-0"></i>
+          <span>Email Automation</span>
+          <span class="status-dot inline-flex items-center gap-1 text-[11px] font-mono text-ok">
+            <span class="w-1.5 h-1.5 rounded-full bg-ok"></span>Available
+          </span>
+        </button>
       </div>
     </div>
 
@@ -716,17 +727,25 @@
     website: {
       name: 'Website Development',
       available: true,
+      setupBanner: {
+        title: 'One-Time Setup Fee',
+        paragraphs: [
+          'A one-time setup fee is charged separately based on your project requirements.',
+          'The hosting and maintenance plans below cover only the recurring management, hosting and support services after your website has been successfully delivered.'
+        ]
+      },
       plans: {
         hosting: {
           name: 'Hosting',
           code: 'WEB-01',
           description: 'Reliable cloud hosting with everything you need to launch and run your business website.',
           pricing: {
-            monthly:   { price: 499, billed: 499,   period: 'Billed Monthly',         savings: 0  },
-            sixMonths: { price: 459, billed: 2754,  period: 'Billed every 6 months',  savings: 8  },
-            yearly:    { price: 424, billed: 5088,  period: 'Billed every year',      savings: 15 },
-            twoYears:  { price: 399, billed: 9576,  period: 'Billed every 24 months', savings: 20 }
+            monthly:   { price: 399, billed: 399,   period: 'Billed Monthly',         savings: 0  },
+            sixMonths: { price: 367, billed: 2202,  period: 'Billed every 6 months',  savings: 8  },
+            yearly:    { price: 339, billed: 4068,  period: 'Billed every year',      savings: 15 },
+            twoYears:  { price: 319, billed: 7656,  period: 'Billed every 2 years',   savings: 20 }
           },
+          bestFor: 'Perfect for businesses that rarely (after a long period) update their website after launch.',
           features: [
             'Cloud Hosting',
             'Custom Domain',
@@ -752,10 +771,10 @@
             yearly:    { price: 679, billed: 8148,   period: 'Billed every year',      savings: 15 },
             twoYears:  { price: 639, billed: 15336,  period: 'Billed every 24 months', savings: 20 }
           },
+          bestFor: 'Perfect for businesses that regularly (every month / regular intervals) update their website with new content, staff information, pricing, images and business details.',
           extraFeatures: [
-            '24×7 Technical Support',
             'Website Content Updates',
-            'Trainer Profile Updates',
+            'Staff Profile Updates',
             'Media Content Updates',
             'Business Information Updates',
             'Pricing Updates',
@@ -765,12 +784,49 @@
             'Priority Technical Support'
           ],
           cta: { text: 'Choose Managed Hosting', href: '#contact' }
+        },
+        careplus: {
+          name: 'Website Care+',
+          code: 'WEB-03',
+          badge: 'Premium',
+          extraHeader: 'Everything in Managed Hosting',
+          description: 'Complete website management (daily) for businesses that require continuous updates, maintenance and priority assistance.',
+          bestFor: 'Complete website management (daily) for businesses that require continuous updates, maintenance and priority assistance.',
+          pricing: {
+            monthly:   { custom: true, displayPrice: '₹3,500+', billingText: 'Custom Monthly Pricing' },
+            sixMonths: { custom: true, displayPrice: '₹3,500+', billingText: 'Custom Monthly Pricing' },
+            yearly:    { custom: true, displayPrice: '₹3,500+', billingText: 'Custom Monthly Pricing' },
+            twoYears:  { custom: true, displayPrice: '₹3,500+', billingText: 'Custom Monthly Pricing' }
+          },
+          extraFeatures: [
+            'Unlimited Content Updates*',
+            'Website Maintenance',
+            'Security Monitoring',
+            'Performance Monitoring',
+            'Regular Website Improvements',
+            'Priority Issue Resolution',
+            'Emergency Bug Fixes',
+            'Landing Page Updates',
+            'Campaign Content Updates',
+            'Staff Profile Updates',
+            'Gallery Updates',
+            'Business Information Updates',
+            'Pricing Updates',
+            'Monthly Website Review',
+            'Dedicated Technical Assistance'
+          ],
+          cta: { text: 'Contact Us', href: '#contact' }
         }
       }
     },
     gymcrm:   {
       name: 'Gym CRM',
       available: true,
+      banner: {
+        title: 'NEWLY LAUNCHED',
+        icon: 'rocket',
+        message: 'Our Gym CRM has recently launched. Join as an early customer and help shape future features based on real business needs.'
+      },
       plans: {
         standard: {
           name: 'Gym CRM',
@@ -791,21 +847,25 @@
           ],
           cta: { text: 'Contact Us', href: '#contact' }
         },
-        personalTraining: {
-          name: 'Gym CRM + Personal Training',
+        customModules: {
+          name: 'Custom Modules',
           code: 'GYM-02',
-          badge: 'Recommended',
-          extraHeader: 'Everything in Gym CRM',
-          description: 'Everything in Gym CRM, plus a complete Personal Training module for trainer assignment, workout tracking, and progress reporting.',
+          description: 'Customized based on your business requirements. Extend your Gym CRM with additional modules and custom features. Pricing depends on the selected modules and customization requirements.',
           pricing: {
-            yearly: { price: 8000, billed: 8000, period: 'Billed yearly', savings: 0 }
+            yearly: { custom: true, displayPrice: '₹7,000+', billingText: 'Pricing varies based on the modules and customizations selected.' }
           },
-          extraFeatures: [
-            'Personal Training Module',
-            'Trainer Assignment',
-            'Workout Tracking',
-            'Training Progress',
-            'Personal Training Reports'
+          features: [
+            'Personal Training',
+            'AI Assistant',
+            'AI Diet Recommendations',
+            'AI Workout Recommendations',
+            'AI Chatbot',
+            'WhatsApp Automation',
+            'Multi-Branch Management',
+            'Access Control',
+            'Custom Reports',
+            'Custom Integrations',
+            'Other Custom Features'
           ],
           cta: { text: 'Contact Us', href: '#contact' }
         }
@@ -815,61 +875,46 @@
       name: 'WhatsApp Automation',
       available: true,
       plans: {
-        starter: {
-          name: 'Starter',
+        basic: {
+          name: 'Basic',
           code: 'WA-01',
-          description: 'Best for small businesses getting started with WhatsApp automation.',
+          description: 'Perfect for businesses that need essential WhatsApp communication.',
           pricing: {
-            setup: { price: 3000, billed: 3000, period: 'One-time setup fee', savings: 0 }
+            monthly: { price: 500, billed: 500, period: 'Billed Monthly', savings: 0 }
           },
           features: [
-            'WhatsApp Cloud API Setup',
-            'Meta Business Configuration',
-            'Business Verification Guidance',
-            'Dedicated Business Phone Setup',
+            'Official WhatsApp Business API',
             'Template Message Setup',
-            'Basic Automation',
-            'Testing',
-            'Deployment'
+            'Automated Welcome Messages',
+            'Automated Payment Reminders',
+            'Automated Appointment Reminders',
+            'Automated Order Updates',
+            'Simple Customer Notifications',
+            'Basic WhatsApp Support'
           ],
           cta: { text: 'Contact Us', href: '#contact' }
         },
-        professional: {
-          name: 'Professional',
+        advanced: {
+          name: 'Advanced',
           code: 'WA-02',
           badge: 'Recommended',
-          extraHeader: 'Everything in Starter',
-          description: 'Everything in Starter, plus advanced automations and integrations for growing businesses.',
+          extraHeader: 'Everything in Basic',
+          description: 'Complete WhatsApp automation for businesses that want advanced communication and customer engagement.',
           pricing: {
-            setup: { price: 5000, billed: 5000, period: 'One-time setup fee', savings: 0 }
+            monthly: { price: 1000, billed: 1000, period: 'Billed Monthly', savings: 0 }
           },
           extraFeatures: [
-            'n8n Automation',
+            'Broadcast Messages',
+            'Customer Segmentation',
+            'Automated Follow-up Messages',
+            'Smart Auto Replies',
             'Lead Capture Automation',
+            'Order & Delivery Updates',
+            'Appointment Scheduling',
             'Payment Reminder Automation',
-            'Appointment Reminder Automation',
-            'Order Update Automation',
-            'CRM Integration',
-            'Google Sheets Integration',
-            'Webhook Integration',
-            'Testing & Deployment'
-          ],
-          cta: { text: 'Contact Us', href: '#contact' }
-        },
-        enterprise: {
-          name: 'Enterprise',
-          code: 'WA-03',
-          description: 'Advanced WhatsApp automation for organisations with complex workflows and integrations.',
-          pricing: {
-            custom: { price: null, custom: true, displayPrice: 'Custom Pricing', period: 'Tailored to your requirements' }
-          },
-          features: [
-            'Advanced Workflow Automation',
-            'Multi-system Integration',
-            'Custom APIs',
-            'Advanced CRM Integration',
-            'Multiple Automation Flows',
-            'Ongoing Support'
+            'Rich Media Messages (Images, PDFs & Videos)',
+            'Chat History & Customer Tracking',
+            'Priority Support'
           ],
           cta: { text: 'Contact Us', href: '#contact' }
         }
@@ -922,6 +967,45 @@
         description: 'Every business has different workflows. Pricing depends entirely on your custom requirements, integrations, and project complexity.',
         features: [],
         bottomText: 'Pricing depends on your customized setup.',
+        cta: { text: 'Contact Us', href: '#contact' }
+      }
+    },
+    email: {
+      name: 'Email Automation',
+      available: true,
+      infoCard: {
+        title: 'Email Automation',
+        status: 'Available',
+        badge: null,
+        icon: 'mail',
+        description: 'Professional email automation setup for businesses. We configure automated email workflows that work with your CRM, customer actions, forms, and business processes. Our setup works with both CRMs developed by Makwall Products and compatible third-party CRM systems.',
+        price: { displayPrice: '₹3,000', label: 'One-Time Setup Fee' },
+        features: [
+          'Email Automation Setup',
+          'SMTP Configuration',
+          'Domain Authentication (SPF, DKIM & DMARC)',
+          'Automated Welcome Emails',
+          'Transactional Emails',
+          'Order Confirmation Emails',
+          'Payment Reminder Emails',
+          'Appointment Reminder Emails',
+          'Follow-up Emails',
+          'Customer Notification Emails',
+          'Form Submission Emails',
+          'CRM Integration',
+          'Custom Workflow Setup',
+          'Testing & Deployment'
+        ],
+        notices: [
+          'Your email automation is configured to work with both Makwall Products CRMs and supported third-party CRM systems.',
+          'Up to 300 emails per day can be sent for free, depending on your email provider\'s free tier.',
+          'If your business requires higher email volumes, additional monthly charges from your email service provider may apply.',
+          'Makwall Products does not charge a monthly fee for email sending. Any additional sending costs are charged directly by the email provider.'
+        ],
+        learnMore: {
+          text: 'View Brevo Email Pricing',
+          href: 'https://www.brevo.com/pricing/'
+        },
         cta: { text: 'Contact Us', href: '#contact' }
       }
     }
@@ -1046,6 +1130,15 @@
           + '<span class="period-value">—</span>'
         + '</p>'
       + '</div>'
+      + (function() {
+          if (!plan.bestFor) return '';
+          const dividerColor = isFeatured ? 'border-ink/10' : 'border-hair';
+          return '<div class="mb-4">'
+            + '<p class="text-[11px] font-mono text-signal uppercase tracking-wide mb-2">Best For</p>'
+            + '<p class="text-sm text-ink leading-relaxed">' + escapeHtml(plan.bestFor) + '</p>'
+            + '</div>'
+            + '<div class="mb-6 border-t ' + dividerColor + '"></div>';
+        })()
       + '<ul class="space-y-2.5 mb-8 flex-1">' + features + '</ul>'
       + '<a href="' + escapeHtml(plan.cta.href) + '"'
         + ' class="bg-signal text-white font-semibold text-sm px-5 py-3 rounded-lg hover:bg-signal/90 transition-colors text-center">'
@@ -1093,6 +1186,39 @@
     + '</div>';
   }
 
+  function renderSetupBanner(svc) {
+    if (!svc.setupBanner) return '';
+    const b = svc.setupBanner;
+    let html = '<div class="border border-hair rounded-xl bg-paper p-5 mb-6">'
+      + '<h3 class="font-display font-600 text-base mb-2">' + escapeHtml(b.title) + '</h3>';
+    (b.paragraphs || []).forEach(function(p, i) {
+      html += '<p class="text-sm text-mute leading-relaxed' + (i > 0 ? ' mt-2' : '') + '">' + escapeHtml(p) + '</p>';
+    });
+    return html + '</div>';
+  }
+
+  function renderBanner(svc) {
+    if (!svc.banner) return '';
+    const b = svc.banner;
+    const iconName = b.icon || 'sparkles';
+    const noteHtml = b.note
+      ? '<p class="text-sm text-ink/70 leading-relaxed mt-3 flex items-start gap-2">'
+        + '<i data-lucide="check" class="w-4 h-4 text-ok mt-0.5 shrink-0"></i>'
+        + '<span>' + escapeHtml(b.note) + '</span>'
+        + '</p>'
+      : '';
+    return '<div class="flex items-start gap-4 border border-hair rounded-xl bg-signaldim p-5 mb-6 text-left">'
+      + '<div class="w-10 h-10 rounded-lg bg-white border border-hair flex items-center justify-center shrink-0">'
+        + '<i data-lucide="' + escapeHtml(iconName) + '" class="w-5 h-5 text-signal"></i>'
+      + '</div>'
+      + '<div class="flex-1">'
+        + '<p class="text-xs font-mono text-signal uppercase tracking-wide mb-2">' + escapeHtml(b.title || '') + '</p>'
+        + '<p class="text-sm text-ink/85 leading-relaxed">' + escapeHtml(b.message || '') + '</p>'
+        + noteHtml
+      + '</div>'
+    + '</div>';
+  }
+
   function renderInfoCard(svc) {
     const info = svc.infoCard || {};
 
@@ -1116,6 +1242,13 @@
         + escapeHtml(info.description) + '</p>'
       : '';
 
+    const priceHtml = info.price
+      ? '<div class="mb-6">'
+        + '<p class="text-xs font-mono text-faint uppercase tracking-wide mb-3">' + escapeHtml(info.price.label || '') + '</p>'
+        + '<span class="font-display font-700 text-4xl text-ink">' + escapeHtml(info.price.displayPrice) + '</span>'
+        + '</div>'
+      : '';
+
     const featuresHtml = (info.features && info.features.length)
       ? '<ul class="space-y-2.5 mb-6 max-w-md mx-auto text-left">'
         + info.features.map(f =>
@@ -1125,6 +1258,26 @@
             + '</li>'
           ).join('')
         + '</ul>'
+      : '';
+
+    const noticesHtml = (info.notices && info.notices.length)
+      ? '<div class="mb-6 max-w-md mx-auto bg-signaldim border border-hair rounded-xl p-5 text-left">'
+        + info.notices.map(n =>
+            '<div class="flex items-start gap-2.5 text-[13px] text-ink/80 mb-3 last:mb-0">'
+            + '<i data-lucide="check" class="w-4 h-4 text-signal mt-0.5 shrink-0"></i>'
+            + '<span>' + escapeHtml(n) + '</span>'
+            + '</div>'
+          ).join('')
+        + '</div>'
+      : '';
+
+    const learnMoreHtml = info.learnMore
+      ? '<div class="flex justify-center mb-6">'
+        + '<a href="' + escapeHtml(info.learnMore.href) + '" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-signal hover:text-signal/80 inline-flex items-center gap-1.5">'
+          + escapeHtml(info.learnMore.text)
+          + '<i data-lucide="external-link" class="w-3.5 h-3.5"></i>'
+          + '</a>'
+        + '</div>'
       : '';
 
     const bottomHtml = '<p class="text-mute text-sm mb-6">' + escapeHtml(info.bottomText || '') + '</p>';
@@ -1146,7 +1299,10 @@
       + titleHtml
       + badgeHtml
       + descHtml
+      + priceHtml
       + featuresHtml
+      + noticesHtml
+      + learnMoreHtml
       + bottomHtml
       + ctaHtml
       + '</div>';
@@ -1159,7 +1315,7 @@
 
     if (svc.plans) {
       const showSelector = hasMultipleBillingCycles(svc);
-      container.innerHTML = (showSelector ? renderBillingSelector() : '') + renderPlanCards();
+      container.innerHTML = (showSelector ? renderBillingSelector() : '') + renderSetupBanner(svc) + renderBanner(svc) + renderPlanCards();
       updatePrices();
     } else if (svc.notAvailable) {
       container.innerHTML = renderNotAvailable(svc);
@@ -1188,7 +1344,14 @@
         animateSwap(card.querySelector('.price-value'), pricing.displayPrice || 'Custom');
         const billedEl = card.querySelector('.billed-value');
         const periodEl = card.querySelector('.period-value');
-        if (billedEl && billedEl.parentElement) billedEl.parentElement.style.display = 'none';
+        if (billedEl && billedEl.parentElement) {
+          if (pricing.billingText) {
+            billedEl.parentElement.style.display = '';
+            animateSwap(billedEl, pricing.billingText);
+          } else {
+            billedEl.parentElement.style.display = 'none';
+          }
+        }
         if (periodEl && periodEl.parentElement) periodEl.parentElement.style.display = 'none';
         const savingsEl = card.querySelector('.savings-badge');
         if (savingsEl) savingsEl.style.display = 'none';
