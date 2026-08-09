@@ -831,9 +831,9 @@
         standard: {
           name: 'Gym CRM',
           code: 'GYM-01',
-          description: 'Complete gym management software for memberships, attendance, renewals, trainers, billing, reporting, and customer management.',
+          description: 'Complete gym management software with communication automation.',
           pricing: {
-            yearly: { price: 7000, billed: 7000, period: 'Billed yearly', savings: 0 }
+            yearly: { price: 8000, billed: 8000, period: 'Billed yearly', savings: 0 }
           },
           features: [
             'Member Management',
@@ -842,29 +842,33 @@
             'Payment Tracking',
             'Dashboard',
             'Trainer Management',
+            'Personal Training',
             'Reports',
-            'Customer Management'
+            'Customer Management',
+            'SMS Automation',
+            'WhatsApp Automation'
           ],
           cta: { text: 'Contact Us', href: '#contact' }
         },
-        customModules: {
-          name: 'Custom Modules',
+        plus: {
+          name: 'Gym CRM Plus',
           code: 'GYM-02',
-          description: 'Customized based on your business requirements. Extend your Gym CRM with additional modules and custom features. Pricing depends on the selected modules and customization requirements.',
+          extraHeader: 'Everything in Gym CRM',
+          description: 'Everything in Gym CRM, plus advanced AI and custom features.',
           pricing: {
-            yearly: { custom: true, displayPrice: '₹7,000+', billingText: 'Pricing varies based on the modules and customizations selected.' }
+            yearly: { custom: true, displayPrice: '₹8,000+', billingText: 'Pricing varies based on the selected features and modules.' }
           },
-          features: [
-            'Personal Training',
+          extraFeatures: [
+            'Plus:',
             'AI Assistant',
+            'AI Planning',
             'AI Diet Recommendations',
             'AI Workout Recommendations',
             'AI Chatbot',
-            'WhatsApp Automation',
-            'Multi-Branch Management',
-            'Access Control',
+            'AI Member Insights',
             'Custom Reports',
             'Custom Integrations',
+            'Access Control',
             'Other Custom Features'
           ],
           cta: { text: 'Contact Us', href: '#contact' }
