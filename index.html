@@ -825,7 +825,8 @@
       banner: {
         title: 'NEWLY LAUNCHED',
         icon: 'rocket',
-        message: 'Our Gym CRM has recently launched. Join as an early customer and help shape future features based on real business needs.'
+        message: 'Our Gym CRM has recently launched. Join as an early customer and help shape future features based on real business needs.',
+        link: { text: 'See full Gym Connect overview', href: 'https://makwall.com/gymconnect.html' }
       },
       plans: {
         standard: {
@@ -1211,6 +1212,12 @@
         + '<span>' + escapeHtml(b.note) + '</span>'
         + '</p>'
       : '';
+    const linkHtml = b.link
+      ? '<a href="' + escapeHtml(b.link.href) + '" class="inline-flex items-center gap-1.5 text-sm font-semibold text-signal hover:text-signal/80 mt-3">'
+        + escapeHtml(b.link.text)
+        + '<i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>'
+        + '</a>'
+      : '';
     return '<div class="flex items-start gap-4 border border-hair rounded-xl bg-signaldim p-5 mb-6 text-left">'
       + '<div class="w-10 h-10 rounded-lg bg-white border border-hair flex items-center justify-center shrink-0">'
         + '<i data-lucide="' + escapeHtml(iconName) + '" class="w-5 h-5 text-signal"></i>'
@@ -1219,6 +1226,7 @@
         + '<p class="text-xs font-mono text-signal uppercase tracking-wide mb-2">' + escapeHtml(b.title || '') + '</p>'
         + '<p class="text-sm text-ink/85 leading-relaxed">' + escapeHtml(b.message || '') + '</p>'
         + noteHtml
+        + linkHtml
       + '</div>'
     + '</div>';
   }
