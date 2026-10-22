@@ -373,12 +373,7 @@
       });
     });
 
-    // Reduced motion: show everything finished, no loops
-    if (reduce) {
-      cards.forEach(function (c) { c.classList.add('show'); });
-      return;
-    }
-
+    // With animations turned off we still type, but skip the floating movement
     // 2. Cards float in after the headline lands
     cards.forEach(function (c, i) {
       setTimeout(function () { c.classList.add('show'); }, 900 + i * 160);
