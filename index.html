@@ -40,6 +40,7 @@
 </script>
 
 <link rel="stylesheet" href="site.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -67,42 +68,43 @@
 
     <a class="float-card fc-tl" href="#agent-instant">
       <span class="fc-head"><span class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>Instant lead reply</span>
-      <span class="fc-bubble">Hi, what's the fee?</span>
-      <span class="fc-bubble fc-out">Hi Ravi! Plans start at ₹1,500.</span>
-      <span class="fc-foot">Replied in 4 seconds</span>
+      <span class="fc-bubble" data-seq><span data-type>Hi, what's the fee?</span></span>
+      <span class="fc-bubble fc-out" data-seq><span data-type>Hi Ravi! Plans start at ₹1,500.</span></span>
+      <span class="fc-foot" data-seq>Replied in 4 seconds</span>
     </a>
 
     <a class="float-card fc-bl" href="#agent-follow">
       <span class="fc-head"><span class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></span>Follow-up agent</span>
-      <span class="fc-step done">Day 1: details sent</span>
-      <span class="fc-step done">Day 3: question answered</span>
-      <span class="fc-step now">Day 7: lead said yes</span>
+      <span class="fc-step done" data-seq><span data-type>Day 1: details sent</span></span>
+      <span class="fc-step done" data-seq><span data-type>Day 3: question answered</span></span>
+      <span class="fc-step now" data-seq><span data-type>Day 7: lead said yes</span></span>
     </a>
 
     <a class="float-card fc-tr" href="#agent-voice">
       <span class="fc-head"><span class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></svg></span>AI voice agent</span>
       <span class="fc-wave" aria-hidden="true"><i style="height:35%"></i><i style="height:60%"></i><i style="height:45%"></i><i style="height:85%"></i><i style="height:55%"></i><i style="height:100%"></i><i style="height:40%"></i><i style="height:75%"></i><i style="height:90%"></i><i style="height:50%"></i><i style="height:70%"></i><i style="height:35%"></i><i style="height:80%"></i><i style="height:55%"></i><i style="height:65%"></i><i style="height:40%"></i><i style="height:95%"></i><i style="height:50%"></i></span>
-      <span class="fc-foot fc-live">Call answered, appointment booked</span>
+      <span class="fc-quote" data-seq><span data-type>"Free trial undha? Tomorrow morning."</span></span>
+      <span class="fc-foot fc-live" data-seq><span data-type>Trial booked, WhatsApp sent</span></span>
     </a>
 
     <a class="float-card fc-br" href="#agent-finder">
       <span class="fc-head"><span class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>Lead gen agent</span>
-      <span class="fc-row"><span>Sravani</span><b>Ready to buy</b></span>
-      <span class="fc-row"><span>Anil</span><b>Wants a call</b></span>
-      <span class="fc-row"><span>Kiran</span><em>Later</em></span>
+      <span class="fc-row" data-seq><span data-type>Sravani</span><b data-pop>Ready to buy</b></span>
+      <span class="fc-row" data-seq><span data-type>Anil</span><b data-pop>Wants a call</b></span>
+      <span class="fc-row" data-seq><span data-type>Kiran</span><em data-pop>Later</em></span>
     </a>
 
     <div class="hero-center">
-      <h1><span class="h-line">Your next best</span> <span class="h-line"><span class="glass">employee</span> is</span> <span class="ai-line">an AI agent.</span></h1>
-      <p class="hero-sub">Scale your business without hiring more staff. Makwall AI builds AI agents that answer your calls, reply to every lead and handle your daily work, 24/7.</p>
-      <div class="hero-ctas">
+      <h1><span class="h-line intro" style="--d:0ms">Your next best</span> <span class="h-line intro" style="--d:140ms"><span class="glass">employee</span> is</span> <span class="ai-line intro" style="--d:280ms">an AI agent.</span></h1>
+      <p class="hero-sub intro" style="--d:520ms">Scale your business without hiring more staff. Makwall AI builds AI agents that answer your calls, reply to every lead and handle your daily work, 24/7.</p>
+      <div class="hero-ctas intro" style="--d:640ms">
         <a class="btn btn-primary" href="#agents">See our AI agents</a>
         <a class="btn btn-ghost" href="https://wa.me/918179823846?text=Hi%20Mohan%2C%20I%20saw%20Makwall%20AI%20and%20want%20to%20know%20more." target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
           Talk on WhatsApp
         </a>
       </div>
-      <p class="hero-trust">
+      <p class="hero-trust intro" style="--d:760ms">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
         AI automation agency, MSME registered in Andhra Pradesh. We work in Telugu and English.
       </p>
@@ -356,16 +358,100 @@
 </footer>
 
 <script>
-  document.documentElement.classList.add('js');
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // The one orchestrated moment: the agents float in around the headline
   (function () {
-    var items = Array.prototype.slice.call(document.querySelectorAll('.float-card'));
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce) { items.forEach(function (el) { el.classList.add('show'); }); return; }
-    items.forEach(function (el, i) {
-      setTimeout(function () { el.classList.add('show'); }, 250 + i * 140);
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.float-card'));
+
+    // 1. Intro: the headline and the rest of the hero rise in
+    // wait two frames so the browser paints the starting state first
+    void document.body.offsetWidth;
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        setTimeout(function () { document.documentElement.classList.add('intro-go'); }, 60);
+      });
+    });
+
+    // Reduced motion: show everything finished, no loops
+    if (reduce) {
+      cards.forEach(function (c) { c.classList.add('show'); });
+      return;
+    }
+
+    // 2. Cards float in after the headline lands
+    cards.forEach(function (c, i) {
+      setTimeout(function () { c.classList.add('show'); }, 900 + i * 160);
+    });
+
+    // 3. Each card types its story, holds, clears and types again, forever
+    function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+    function prepare(card) {
+      card.querySelectorAll('[data-type]').forEach(function (el) {
+        var full = el.textContent;
+        el.setAttribute('aria-label', full);
+        el.innerHTML = '<span class="tw-ghost" aria-hidden="true"></span><span class="tw-live" aria-hidden="true"></span>';
+        el.firstChild.textContent = full;
+        el._full = full;
+        el._live = el.lastChild;
+      });
+    }
+
+    function reset(card) {
+      card.querySelectorAll('[data-seq]').forEach(function (el) { el.classList.remove('on'); });
+      card.querySelectorAll('[data-pop]').forEach(function (el) { el.classList.remove('on'); });
+      card.querySelectorAll('[data-type]').forEach(function (el) { el._live.textContent = ''; el._live.classList.remove('caret'); });
+    }
+
+    async function typeInto(el) {
+      var live = el._live, full = el._full;
+      live.classList.add('caret');
+      for (var i = 1; i <= full.length; i++) {
+        while (!card_visible(el)) await sleep(400);
+        live.textContent = full.slice(0, i);
+        await sleep(full.charAt(i - 1) === ' ' ? 45 : 28 + Math.random() * 30);
+      }
+      live.classList.remove('caret');
+    }
+
+    function card_visible(el) {
+      var c = el.closest('.float-card');
+      return c && c._visible && !document.hidden;
+    }
+
+    async function run(card, startDelay) {
+      prepare(card);
+      reset(card);
+      await sleep(startDelay);
+      while (true) {
+        var steps = card.querySelectorAll('[data-seq]');
+        for (var i = 0; i < steps.length; i++) {
+          var step = steps[i];
+          step.classList.add('on');
+          var t = step.hasAttribute('data-type') ? step : step.querySelector('[data-type]');
+          if (t) await typeInto(t);
+          var pop = step.querySelector('[data-pop]');
+          if (pop) { await sleep(150); pop.classList.add('on'); }
+          await sleep(380);
+        }
+        await sleep(2600);            // hold the finished story
+        card.classList.add('clearing');
+        await sleep(350);
+        reset(card);
+        card.classList.remove('clearing');
+        await sleep(600);             // short pause, then type again
+      }
+    }
+
+    // Only animate cards that are on screen
+    var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.target._visible = e.isIntersecting; });
+    }) : null;
+    cards.forEach(function (c, i) {
+      c._visible = true;
+      if (io) io.observe(c);
+      run(c, 1500 + i * 700);
     });
   })();
 </script>
