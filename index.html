@@ -425,6 +425,27 @@
     <div class="space-y-5">
       <div class="border border-hair rounded-xl p-6 sm:p-7 flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-8">
         <div class="sm:w-40 shrink-0">
+          <span class="inline-block text-xs font-mono px-2 py-1 rounded-full bg-okdim text-ok">Launched</span>
+        </div>
+        <div class="flex-1">
+          <h3 class="font-display font-600 text-lg mb-1.5">FitWatch — multi-tenant gym CRM</h3>
+          <p class="text-mute text-sm leading-relaxed mb-3">
+            A full gym management platform built on Supabase: member and payment tracking, automated WhatsApp
+            renewal reminders, and a self-serve wallet so each gym pays only for the messages it sends — with a
+            confirm-before-send step so nothing goes out without the gym owner's approval.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">Supabase</span>
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">Edge Functions</span>
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">WhatsApp Cloud API</span>
+            <span class="text-xs font-mono text-mute bg-paper border border-hair px-2 py-1 rounded">Razorpay</span>
+          </div>
+        </div>
+        <a href="fitwatch.html" class="text-sm font-semibold text-signal hover:text-signal/80 whitespace-nowrap shrink-0">See FitWatch →</a>
+      </div>
+
+      <div class="border border-hair rounded-xl p-6 sm:p-7 flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-8">
+        <div class="sm:w-40 shrink-0">
           <span class="inline-block text-xs font-mono px-2 py-1 rounded-full bg-okdim text-ok">In progress</span>
         </div>
         <div class="flex-1">
@@ -590,8 +611,8 @@
           class="service-btn flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors">
           <i data-lucide="sparkles" class="w-4 h-4 shrink-0"></i>
           <span>AI Automation</span>
-          <span class="status-dot inline-flex items-center gap-1 text-[11px] font-mono text-faint">
-            <span class="w-1.5 h-1.5 rounded-full bg-faint"></span>Not Available
+          <span class="status-dot inline-flex items-center gap-1 text-[11px] font-mono text-signal">
+            <span class="w-1.5 h-1.5 rounded-full bg-signal"></span>Coming Soon
           </span>
         </button>
         <button type="button" data-service="custom" aria-pressed="false" role="tab"
@@ -930,8 +951,8 @@
       available: true,
       infoCard: {
         title: 'AI Automation',
-        status: 'Not Available',
-        statusColor: 'faint',
+        status: 'Coming Soon',
+        statusColor: 'signal',
         badge: null,
         icon: 'sparkles',
         description: 'We build AI-powered business automation systems tailored to your workflow.',
@@ -957,8 +978,8 @@
           'AI Custom Integrations',
           'Custom AI Agents'
         ],
-        bottomText: "Currently not available. We'll let you know as soon as it's ready.",
-        cta: { text: 'Currently Unavailable', disabled: true }
+        bottomText: "In active development — voice agents and chatbots are being built now. Get in touch to be an early customer.",
+        cta: { text: 'Talk to Us', href: '#contact' }
       }
     },
     custom:   {
