@@ -125,7 +125,7 @@
   .float-card.clearing [data-seq] { opacity: 0 !important; }
 
   /* Intro: the hero rises in from a soft blur */
-  @media (prefers-reduced-motion: no-preference) {
+  @media all { /* full animation for every visitor */
     .js .intro {
       translate: 0 28px; filter: blur(12px);
       transition: opacity .9s cubic-bezier(.2,.7,.2,1), translate .9s cubic-bezier(.2,.7,.2,1), filter .9s cubic-bezier(.2,.7,.2,1);
@@ -409,8 +409,4 @@
     .footer-grid > :first-child { grid-column: auto; }
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .js .float-card { opacity: 1; translate: none; transition: none; }
-    .btn { transition: none; }
-  }
+

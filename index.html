@@ -361,7 +361,6 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   (function () {
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var cards = Array.prototype.slice.call(document.querySelectorAll('.float-card'));
 
     // 1. Intro: the headline and the rest of the hero rise in
@@ -373,7 +372,6 @@
       });
     });
 
-    // With animations turned off we still type, but skip the floating movement
     // 2. Cards float in after the headline lands
     cards.forEach(function (c, i) {
       setTimeout(function () { c.classList.add('show'); }, 900 + i * 160);
